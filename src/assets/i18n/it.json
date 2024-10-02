@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "pagina non trovata",
+    "doesNotExist": "Siamo spiacenti, la pagina che stavi cercando non esiste.",
+    "errorLogged": "Abbiamo registrato l'errore e lo esamineremo.",
+    "goHome": "Vai a Casa"
+  },
   "keyboard": {
     "ctrl": "CTRL",
     "shift": "MAIUSC"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Traduttore",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Rileva lingua",
-      "more": "Più lingue"
+      "more": "Più lingue",
+      "detected": "{{lang}} - Rilevato"
     },
-    "feedback": "Invia commenti",
     "input": {
       "text": "Testo",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Cerca sul computer",
       "title": "Scegli un video"
     },
-    "description": "Un'app di traduzione della lingua dei segni multilingue bidirezionale per desktop e dispositivi mobili",
     "spoken-to-signed": {
       "text": "Testo in lingua parlata",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Caricamento del modello video umano",
           "generating": "Generazione video"
         }
+      },
+      "placeholder": "Inserire il testo"
+    },
+    "description": "Traduzione semplificata della lingua dei segni con modelli in tempo reale all'avanguardia. ",
+    "suggestions": {
+      "translate-from": "Tradotto da",
+      "did-you-mean": "Intendevi"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copia traduzione"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribuisci"
-    },
-    "tools": {
-      "title": "Strumenti"
     },
     "nav": {
       "pages": "Passa ad altre pagine",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software e licenze"
-    }
+    },
+    "title": "Legale"
   },
   "playground": {
     "title": "Parco giochi per l'elaborazione della lingua dei segni"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Scheletro",
       "avatar": "Avatar",
-      "human": "Umano"
+      "person": "Umano"
     },
     "title": "Impostazioni",
     "close": "Chiudi le impostazioni",
     "support": {
       "title": "Supporto",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Invia feedback"
       },
       "about": {
         "title": "Di"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internazionale",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Tutti",
+  "countries.signed": "Tutti"
 }

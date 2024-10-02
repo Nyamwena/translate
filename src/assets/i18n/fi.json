@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Sivua ei löydetty",
+    "doesNotExist": "Valitettavasti etsimääsi sivua ei ole olemassa.",
+    "errorLogged": "Olemme kirjaanneet virheen ja tutkimme sen.",
+    "goHome": "Mene kotiin"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "vaihto"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Kääntäjä",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Tunnista kieli",
-      "more": "Lisää kieliä"
+      "more": "Lisää kieliä",
+      "detected": "{{lang}} - Havaittu"
     },
-    "feedback": "Lähetä palautetta",
     "input": {
       "text": "Teksti",
       "webcam": "Verkkokamera",
@@ -22,7 +27,6 @@
       "browse": "Selaa tietokonetta",
       "title": "Valitse video"
     },
-    "description": "Kaksisuuntainen monikielinen viittomakielen käännössovellus pöytäkoneille ja mobiililaitteille",
     "spoken-to-signed": {
       "text": "Puhutun kielen teksti",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Ladataan ihmisvideomallia",
           "generating": "Luodaan videota"
         }
+      },
+      "placeholder": "Kirjoita teksti"
+    },
+    "description": "Vaivaton viittomakielen käännös huippuluokan reaaliaikaisten mallien avulla. ",
+    "suggestions": {
+      "translate-from": "Kääntää",
+      "did-you-mean": "Tarkoititko"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopioi käännös"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Avusta"
-    },
-    "tools": {
-      "title": "Työkalut"
     },
     "nav": {
       "pages": "Siirry muille sivuille",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Ohjelmistot ja käyttöluvat"
-    }
+    },
+    "title": "Laillinen"
   },
   "playground": {
     "title": "Viittomakielen käsittelyn leikkikenttä"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Luuranko",
       "avatar": "hahmo",
-      "human": "Ihmisen"
+      "person": "Ihmisen"
     },
     "title": "asetukset",
     "close": "Sulje asetukset",
     "support": {
       "title": "Tuki",
       "feedback": {
-        "title": "Palaute"
+        "title": "Palaute",
+        "send": "Lähetä palautetta"
       },
       "about": {
         "title": "Noin"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Kansainvälinen",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Kaikki",
+  "countries.signed": "Kaikki"
 }

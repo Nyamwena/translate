@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Peji haina kuwanikwa",
+    "doesNotExist": "Tine urombo, peji rawanga uchitsvaga haripo.",
+    "errorLogged": "Isu takanyora kukanganisa uye tichazvitarisa.",
+    "goHome": "Enda Kumba"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Shandura mutauro uchishandisa Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Ziva zita remutauro",
-      "more": "More Mitauro"
+      "more": "More Mitauro",
+      "detected": "{{lang}} - Zvaonekwa"
     },
-    "feedback": "Tumira maonero ako",
     "input": {
       "text": "Mashoko",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Tsvaga pakombiyuta yako",
       "title": "Sarudza vhidhiyo"
     },
-    "description": "A bi-directional yemitauro yakawanda yemutauro wemasaini app yedesktop nenharembozha",
     "spoken-to-signed": {
       "text": "Mutauro Unotaurwa",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "Kurodha modhi yevhidhiyo yemunhu",
           "generating": "Kugadzira vhidhiyo"
         }
+      },
+      "placeholder": "Enter Text"
+    },
+    "description": "Kusashanda Kushandura Mutauro Wemasaini neCutting-Edge Real-Time Models. ",
+    "suggestions": {
+      "translate-from": "Shandura kubva",
+      "did-you-mean": "Waireva here"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copy Translation"
       }
     }
   },
   "landing": {
-    "try": "EDZA KUSHANDURA NEGOOGLE",
+    "try": "Edza Kushandura Nesign",
     "about": {
       "title": "Maererano",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Isawo ruwoko rwako pabasa iri"
-    },
-    "tools": {
-      "title": "Zvibatiso"
     },
     "nav": {
       "pages": "Enda kune mamwe mapeji",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "MaSofutiwee nemaRaisenzi awo"
-    }
+    },
+    "title": "Zvemutemo"
   },
   "playground": {
     "title": "Mutauro Wemasaini Wokugadzira Nzvimbo Yekutamba"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skeleton",
       "avatar": "Avatar",
-      "human": "Munhu"
+      "person": "Munhu"
     },
     "title": "Settings",
     "close": "Vhara zvigadziriso",
     "support": {
       "title": "Support",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Tumira mhinduro"
       },
       "about": {
         "title": "About"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "International",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Zvose",
+  "countries.signed": "Zvose"
 }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "پاڼه ونه موندل شوه",
+    "doesNotExist": "بخښنه غواړئ، هغه پاڼه چې تاسو یې په لټه کې یاست شتون نلري.",
+    "errorLogged": "موږ تېروتنه ثبت کړې او موږ به یې وګورو.",
+    "goHome": "کور ته تلل"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign ژباړونکی",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "د ژبې موندل",
-      "more": "نورې ژبې"
+      "more": "نورې ژبې",
+      "detected": "{{lang}} - کشف شوی"
     },
-    "feedback": "کتنې ولیږئ",
     "input": {
       "text": "متن",
       "webcam": "ویب کیم",
@@ -22,7 +27,6 @@
       "browse": "خپل کمپیوټر لټون کړئ",
       "title": "یو ویډیو غوره کړئ"
     },
-    "description": "د ډیسټاپ او موبایل لپاره دوه اړخیزه څو ژبنۍ نښې ژبې ژباړې ایپ",
     "spoken-to-signed": {
       "text": "د خبرې شوې ژبې متن",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "د انسان ویډیو ماډل پورته کول",
           "generating": "ویډیو جوړول"
         }
+      },
+      "placeholder": "متن دننه کړئ"
+    },
+    "description": "په ریښتیني وخت کې د کټنګ ایج ماډلونو سره د اشارې ژبې په زړه پورې ژباړه. ",
+    "suggestions": {
+      "translate-from": "څخه ژباړه",
+      "did-you-mean": "ستاسو مطلب دی"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "کاپي ژباړه"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "مرسته"
-    },
-    "tools": {
-      "title": "توکي"
     },
     "nav": {
       "pages": "نورو پاڼو ته لاړ شئ",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "سافټ ویر او جواز لیکونه"
-    }
+    },
+    "title": "قانوني"
   },
   "playground": {
     "title": "د نښې ژبې پروسس کولو لوبې ډګر"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "کنکال",
       "avatar": "اوتار",
-      "human": "انسان"
+      "person": "انسان"
     },
     "title": "ترتیبات",
     "close": "تنظیمات بند کړئ",
     "support": {
       "title": "ملاتړ",
       "feedback": {
-        "title": "فیډبیک"
+        "title": "فیډبیک",
+        "send": "نظر واستوئ"
       },
       "about": {
         "title": "په اړه"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "نړیوال",
-  "to": "{{a}} ← {{b}}"
+  "to": "{{a}} ← {{b}}",
+  "languages.spoken": "ټول",
+  "countries.signed": "ټول"
 }

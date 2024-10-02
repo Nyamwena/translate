@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "پيج نه لڌو",
+    "doesNotExist": "معاف ڪجو، جيڪو صفحو توهان ڳولي رهيا آهيو اهو موجود ناهي.",
+    "errorLogged": "اسان غلطي کي لاگ ان ڪيو آهي ۽ ان تي غور ڪنداسين.",
+    "goHome": "گهر ڏانهن وڃو"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign ترجمو",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "ٻولي کوجيو",
-      "more": "وڌيڪ ٻوليون"
+      "more": "وڌيڪ ٻوليون",
+      "detected": "{{lang}} - معلوم ٿيو"
     },
-    "feedback": "جوابي راءِ ڏيو",
     "input": {
       "text": "متن",
       "webcam": "ويب ڪيم",
@@ -22,7 +27,6 @@
       "browse": "پنهنجو ڪمپيوٽر برائوز ڪريو",
       "title": "هڪ وڊيو چونڊيو"
     },
-    "description": "ڊيسڪ ٽاپ ۽ موبائيل لاءِ هڪ ٻه طرفي گهڻ لساني نشاني ٻولي ترجمو ايپ",
     "spoken-to-signed": {
       "text": "ڳالهائيندڙ ٻولي جو متن",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "انساني وڊيو ماڊل لوڊ ڪندي",
           "generating": "وڊيو ٺاهي رهيو آهي"
         }
+      },
+      "placeholder": "ٽيڪسٽ داخل ڪريو"
+    },
+    "description": "ڪٽنگ-ايج حقيقي-وقت ماڊلز سان بي محنت نشاني ٻوليءَ جو ترجمو. ",
+    "suggestions": {
+      "translate-from": "مان ترجمو ڪريو",
+      "did-you-mean": "ڇا توھان جو مطلب آھي"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "نقل ڪريو ترجمو"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "حصو وٺو"
-    },
-    "tools": {
-      "title": "اوزار"
     },
     "nav": {
       "pages": "ٻين صفحن ڏانهن وڃو",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "سافٽ ويئر ۽ لائيسنس"
-    }
+    },
+    "title": "قانوني"
   },
   "playground": {
     "title": "سائنسي ٻولي پروسيسنگ راند جو ميدان"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "ڍَڪُ",
       "avatar": "اوتار",
-      "human": "انسان"
+      "person": "انسان"
     },
     "title": "سيٽنگون",
     "close": "سيٽنگون بند ڪريو",
     "support": {
       "title": "حمايت",
       "feedback": {
-        "title": "راءِ"
+        "title": "راءِ",
+        "send": "موٽ موڪليو"
       },
       "about": {
         "title": "بابت"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "بين الاقوامي",
-  "to": "{{a}} ← {{b}}"
+  "to": "{{a}} ← {{b}}",
+  "languages.spoken": "سڀ",
+  "countries.signed": "سڀ"
 }

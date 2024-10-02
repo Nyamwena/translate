@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Hindi nahanap ang page",
+    "doesNotExist": "Paumanhin, ang pahina na iyong hinahanap ay wala.",
+    "errorLogged": "Na-log namin ang error at titingnan ito.",
+    "goHome": "Pumunta sa Bahay"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Kilalanin ang Wika",
-      "more": "Higit pang mga Wika"
+      "more": "Higit pang mga Wika",
+      "detected": "{{lang}} - Nakita"
     },
-    "feedback": "Ipadala ang feedback",
     "input": {
       "text": "Text",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Mag-browse sa computer mo",
       "title": "Pumili ng video"
     },
-    "description": "Isang bi-directional multilingual sign language translation app para sa desktop at mobile",
     "spoken-to-signed": {
       "text": "Teksto ng Binigkas na Wika",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Nilo-load ang modelo ng video ng tao",
           "generating": "Bumubuo ng video"
         }
+      },
+      "placeholder": "Ipasok ang Teksto"
+    },
+    "description": "Walang Kahirap-hirap na Pagsasalin ng Sign Language sa Mga Cutting-Edge na Real-Time na Modelo. ",
+    "suggestions": {
+      "translate-from": "Isalin mula sa",
+      "did-you-mean": "Ibig mong sabihin"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopyahin ang Pagsasalin"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Mag-contribute"
-    },
-    "tools": {
-      "title": "Mga tool"
     },
     "nav": {
       "pages": "Mag-navigate sa iba pang mga pahina",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software at Mga Lisensya"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Palaruan sa Pagproseso ng Sign Language"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Kalansay",
       "avatar": "Avatar",
-      "human": "Tao"
+      "person": "Tao"
     },
     "title": "Mga setting",
     "close": "Isara ang mga setting",
     "support": {
       "title": "Suporta",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Magbigay ng feedback"
       },
       "about": {
         "title": "Tungkol sa"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internasyonal",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Lahat",
+  "countries.signed": "Lahat"
 }

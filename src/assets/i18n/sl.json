@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Stran ni najdena",
+    "doesNotExist": "Oprostite, stran, ki ste jo iskali, ne obstaja.",
+    "errorLogged": "Napako smo zabeležili in jo bomo preučili.",
+    "goHome": "Pojdi domov"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Prevajalnik",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Zaznaj jezik",
-      "more": "Več jezikov"
+      "more": "Več jezikov",
+      "detected": "{{lang}} – Zaznano"
     },
-    "feedback": "Pošljite povratne informacije",
     "input": {
       "text": "Besedilo",
       "webcam": "Spletna kamera",
@@ -22,7 +27,6 @@
       "browse": "Prebrskajte računalnik",
       "title": "Izberite videoposnetek"
     },
-    "description": "Dvosmerna večjezična aplikacija za prevajanje znakovnega jezika za namizne in mobilne naprave",
     "spoken-to-signed": {
       "text": "Besedilo v govorjenem jeziku",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Nalaganje človeškega video modela",
           "generating": "Ustvarjanje videa"
         }
+      },
+      "placeholder": "Vnesite besedilo"
+    },
+    "description": "Enostavno prevajanje znakovnega jezika z najsodobnejšimi modeli v realnem času. ",
+    "suggestions": {
+      "translate-from": "Prevedi iz",
+      "did-you-mean": "Si mislil"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopiraj prevod"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Prispevajte"
-    },
-    "tools": {
-      "title": "Orodja"
     },
     "nav": {
       "pages": "Pomaknite se na druge strani",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Programska oprema in licence"
-    }
+    },
+    "title": "Pravno"
   },
   "playground": {
     "title": "Igrišče za obdelavo znakovnega jezika"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Okostje",
       "avatar": "Avatar",
-      "human": "Človek"
+      "person": "Človek"
     },
     "title": "Nastavitve",
     "close": "Zapri nastavitve",
     "support": {
       "title": "Podpora",
       "feedback": {
-        "title": "Povratne informacije"
+        "title": "Povratne informacije",
+        "send": "Pošlji povratno informacijo"
       },
       "about": {
         "title": "O tem"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Mednarodni",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Vse",
+  "countries.signed": "Vse"
 }

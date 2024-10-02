@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Side ikke funnet",
+    "doesNotExist": "Beklager, siden du lette etter eksisterer ikke.",
+    "errorLogged": "Vi har logget feilen og vil se på den.",
+    "goHome": "Gå hjem"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Oversetter",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Gjenkjenn språk",
-      "more": "Flere språk"
+      "more": "Flere språk",
+      "detected": "{{lang}} – oppdaget"
     },
-    "feedback": "Send tilbakemelding",
     "input": {
       "text": "Tekst",
       "webcam": "Webkamera",
@@ -22,7 +27,6 @@
       "browse": "Bla gjennom datamaskinen din",
       "title": "Velg en video"
     },
-    "description": "En toveis flerspråklig tegnspråkoversettelsesapp for datamaskin og mobil",
     "spoken-to-signed": {
       "text": "Muntlig språktekst",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Laster inn menneskelig videomodell",
           "generating": "Genererer video"
         }
+      },
+      "placeholder": "Skriv inn tekst"
+    },
+    "description": "Uanstrengt tegnspråkoversettelse med banebrytende sanntidsmodeller. ",
+    "suggestions": {
+      "translate-from": "Oversett fra",
+      "did-you-mean": "Mente du"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopier oversettelse"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Bidra"
-    },
-    "tools": {
-      "title": "Verktøy"
     },
     "nav": {
       "pages": "Naviger til andre sider",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Programvare og lisenser"
-    }
+    },
+    "title": "Lovlig"
   },
   "playground": {
     "title": "Lekeplass for tegnspråkbehandling"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skjelett",
       "avatar": "Avatar",
-      "human": "Menneskelig"
+      "person": "Menneskelig"
     },
     "title": "Innstillinger",
     "close": "Lukk innstillingene",
     "support": {
       "title": "Brukerstøtte",
       "feedback": {
-        "title": "Tilbakemelding"
+        "title": "Tilbakemelding",
+        "send": "Send tilbakemelding"
       },
       "about": {
         "title": "Om"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internasjonal",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Alle",
+  "countries.signed": "Alle"
 }

@@ -3,5 +3,11 @@
 }
 
 pose-viewer {
-  display: block;
+  display: flex;
+  width: 100%;
+  font-size: 2em;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  aspect-ratio: 1;
 }

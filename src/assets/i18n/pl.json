@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Strona nie znaleziona",
+    "doesNotExist": "Przepraszamy, strona, której szukasz nie istnieje.",
+    "errorLogged": "Zarejestrowaliśmy błąd i przyjrzymy się mu.",
+    "goHome": "Idź do domu"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Tłumacz Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Wykryj język",
-      "more": "Więcej języków"
+      "more": "Więcej języków",
+      "detected": "{{lang}} - Wykryto"
     },
-    "feedback": "Prześlij opinię",
     "input": {
       "text": "Tekst",
       "webcam": "Kamerka internetowa",
@@ -22,7 +27,6 @@
       "browse": "Przeglądaj komputer",
       "title": "Wybierz film"
     },
-    "description": "Dwukierunkowa wielojęzyczna aplikacja do tłumaczenia języka migowego na komputery i urządzenia mobilne",
     "spoken-to-signed": {
       "text": "Tekst w języku mówionym",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Ładowanie ludzkiego modelu wideo",
           "generating": "Generowanie wideo"
         }
+      },
+      "placeholder": "Wprowadź tekst"
+    },
+    "description": "Bezproblemowe tłumaczenie na język migowy z najnowocześniejszymi modelami czasu rzeczywistego. ",
+    "suggestions": {
+      "translate-from": "Przetłumacz z",
+      "did-you-mean": "Miałeś na myśli"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopiuj tłumaczenie"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Twój wkład"
-    },
-    "tools": {
-      "title": "Narzędzia"
     },
     "nav": {
       "pages": "Przejdź do innych stron",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Oprogramowanie i licencje"
-    }
+    },
+    "title": "Prawny"
   },
   "playground": {
     "title": "Plac zabaw przetwarzania języka migowego"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Szkielet",
       "avatar": "Awatara",
-      "human": "Człowiek"
+      "person": "Człowiek"
     },
     "title": "Ustawienia",
     "close": "Zamknij ustawienia",
     "support": {
       "title": "Wspierać się",
       "feedback": {
-        "title": "Informacja zwrotna"
+        "title": "Informacja zwrotna",
+        "send": "Wyślij opinię"
       },
       "about": {
         "title": "O"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Międzynarodowy",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Wszystko",
+  "countries.signed": "Wszystko"
 }

@@ -1,8 +1,11 @@
 {
-  "functions": {
-    "predeploy": ["cd functions && npm run build"],
-    "source": "functions"
-  },
+  "functions": [
+    {
+      "predeploy": ["cd functions && npm run build"],
+      "source": "functions",
+      "codebase": "default"
+    }
+  ],
   "emulators": {
     "firestore": {
       "port": 4010
@@ -35,11 +38,29 @@
     "ignore": [],
     "headers": [
       {
+        "source": "/ngsw-worker.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(jpg|jpeg|gif|png|svg|ttf|woff2)",
         "headers": [
           {
             "key": "Cache-Control",
             "value": "max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/api/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400, s-maxage=0"
           }
         ]
       },
@@ -63,12 +84,28 @@
         "function": "translate-prerender"
       },
       {
-        "source": "/api/**",
-        "function": "translate-textToText"
-      },
-      {
         "source": "/robots.txt",
         "destination": "/assets/robots.txt"
+      },
+      {
+        "source": "/api/v1/**",
+        "function": "translate-gateway"
+      },
+      {
+        "source": "/api/text-normalization",
+        "function": "translate-textNormalization"
+      },
+      {
+        "source": "/api/signwriting-description",
+        "function": "signwriting_description"
+      },
+      {
+        "source": "/api/spoken-text-to-signwriting",
+        "function": "spoken_text_to_signwriting"
+      },
+      {
+        "source": "{/api/spoken-to-signed,/api/signed-to-spoken}",
+        "function": "translate-textToText"
       },
       {
         "source": "about",
@@ -87,11 +124,15 @@
         "destination": "about/languages/index.html"
       },
       {
-        "source": "about/tools",
-        "destination": "about/tools/index.html"
+        "source": "/.well-known/security.txt",
+        "destination": ".well-known/security.txt"
       },
       {
-        "source": "**",
+        "source": "/.well-known/gpg.asc",
+        "destination": ".well-known/gpg.asc"
+      },
+      {
+        "source": "!{/assets/**,/api/**,/.well-known/**}",
         "destination": "/index.html"
       }
     ]

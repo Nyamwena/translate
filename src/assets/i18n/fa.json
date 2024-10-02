@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "صفحه یافت نشد",
+    "doesNotExist": "با عرض پوزش، صفحه ای که به دنبال آن بودید وجود ندارد.",
+    "errorLogged": "ما خطا را ثبت کرده ایم و آن را بررسی می کنیم.",
+    "goHome": "برو خانه"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "‏‫ترجمه Sign‬",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "شناسایی زبان",
-      "more": "زبان های بیشتر"
+      "more": "زبان های بیشتر",
+      "detected": "{{lang}} - شناسایی شد"
     },
-    "feedback": "ارسال بازخورد",
     "input": {
       "text": "نوشتار",
       "webcam": "وبکم",
@@ -22,7 +27,6 @@
       "browse": "مرور رایانه",
       "title": "یک ویدیو را انتخاب کنید"
     },
-    "description": "یک برنامه ترجمه دو زبانه چند زبانه برای دسکتاپ و موبایل",
     "spoken-to-signed": {
       "text": "متن زبان گفتاری",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "در حال بارگیری مدل ویدیویی انسانی",
           "generating": "در حال تولید ویدیو"
         }
+      },
+      "placeholder": "متن را وارد کنید"
+    },
+    "description": "ترجمه بی دردسر زبان اشاره با مدل های پیشرفته در زمان واقعی. ",
+    "suggestions": {
+      "translate-from": "ترجمه از",
+      "did-you-mean": "منظورت این بود"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "ترجمه کپی"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "مشارکت"
-    },
-    "tools": {
-      "title": "ابزارها"
     },
     "nav": {
       "pages": "به صفحات دیگر بروید",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "نرم افزار و مجوزها"
-    }
+    },
+    "title": "قانونی"
   },
   "playground": {
     "title": "زمین بازی پردازش زبان اشاره"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "اسکلت",
       "avatar": "آواتار",
-      "human": "انسان"
+      "person": "انسان"
     },
     "title": "تنظیمات",
     "close": "تنظیمات را ببندید",
     "support": {
       "title": "پشتیبانی",
       "feedback": {
-        "title": "بازخورد"
+        "title": "بازخورد",
+        "send": "ارسال بازخورد"
       },
       "about": {
         "title": "در باره"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "بین المللی",
-  "to": "{{a}} ← {{b}}"
+  "to": "{{a}} ← {{b}}",
+  "languages.spoken": "همه",
+  "countries.signed": "همه"
 }

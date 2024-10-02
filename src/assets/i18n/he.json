@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "הדף לא נמצא",
+    "doesNotExist": "מצטערים, הדף שחיפשת לא קיים.",
+    "errorLogged": "רשמנו את השגיאה ונבדוק אותה.",
+    "goHome": "לך הביתה"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,12 +12,10 @@
   "translate": {
     "title": "תרגום סימנים",
     "language-selector": {
-      "detected": "{lang} - זוהתה",
+      "detected": "{{lang}} - זוהתה",
       "more": "עוד שפות",
       "detect": "זיהוי שפה"
     },
-    "description": "אפליקציית תרגום לשפות סימנים לשולחן העבודה ולנייד",
-    "feedback": "שליחת משוב",
     "input": {
       "webcam": "מצלמת רשת",
       "upload": "העלאה",
@@ -30,12 +34,23 @@
           "loading": "טוען דגם וידאו אנושי",
           "generating": "יצירת וידאו"
         }
-      }
+      },
+      "placeholder": "הזן טקסט"
     },
     "upload": {
       "title": "יש לבחור וידאו",
       "types": "צריך להעלות קובץ MP4,‏ OGV,‏ או WEBM.",
       "browse": "עיון במחשב"
+    },
+    "description": "תרגום שפת סימנים ללא מאמץ עם מודלים חדישים בזמן אמת. ",
+    "suggestions": {
+      "translate-from": "תרגם מ",
+      "did-you-mean": "האם התכוונת"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "העתק תרגום"
+      }
     }
   },
   "landing": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "שיפור הכלי"
-    },
-    "tools": {
-      "title": "כלים"
     },
     "nav": {
       "pages": "נווט לדפים אחרים",
@@ -107,14 +119,15 @@
     "poseViewer": {
       "pose": "שלד",
       "avatar": "אווטאר",
-      "human": "אנושי"
+      "person": "אנושי"
     },
     "title": "הגדרות",
     "close": "סגור הגדרות",
     "support": {
       "title": "תמיכה",
       "feedback": {
-        "title": "מָשׁוֹב"
+        "title": "מָשׁוֹב",
+        "send": "שלח משוב"
       },
       "about": {
         "title": "על אודות"
@@ -166,7 +179,8 @@
     },
     "licenses": {
       "title": "תוכנה ורישיונות"
-    }
+    },
+    "title": "מִשׁפָּטִי"
   },
   "benchmark": {
     "title": "Benchmark",
@@ -196,6 +210,7 @@
   "language-selector": {
     "label": "שנה שפה או אזור"
   },
-  "countries.isl": "בינלאומי",
-  "to": "{{a}} ← {{b}}"
+  "to": "{{a}} ← {{b}}",
+  "languages.spoken": "הכל",
+  "countries.signed": "הכל"
 }

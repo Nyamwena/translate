@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "página não encontrada",
+    "doesNotExist": "Desculpe, a página que você está procurando não existe.",
+    "errorLogged": "Registramos o erro e vamos analisá-lo.",
+    "goHome": "Ir para casa"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Tradutor",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Detetar idioma",
-      "more": "Mais idiomas"
+      "more": "Mais idiomas",
+      "detected": "{{lang}} - Detectado"
     },
-    "feedback": "Enviar feedback e opiniões",
     "input": {
       "text": "Texto",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Procurar no computador",
       "title": "Escolha um vídeo"
     },
-    "description": "Um aplicativo de tradução de linguagem de sinais multilíngue bidirecional para desktop e dispositivos móveis",
     "spoken-to-signed": {
       "text": "Texto em idioma falado",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Carregando modelo de vídeo humano",
           "generating": "Gerando vídeo"
         }
+      },
+      "placeholder": "Digite o Texto"
+    },
+    "description": "Tradução de linguagem de sinais sem esforço com modelos de ponta em tempo real. ",
+    "suggestions": {
+      "translate-from": "Traduzir de",
+      "did-you-mean": "Você quis dizer"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copiar Tradução"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribuir"
-    },
-    "tools": {
-      "title": "Ferramentas"
     },
     "nav": {
       "pages": "Navegue para outras páginas",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software e licenças"
-    }
+    },
+    "title": "Jurídico"
   },
   "playground": {
     "title": "Playground de processamento de linguagem de sinais"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Esqueleto",
       "avatar": "Avatar",
-      "human": "Humano"
+      "person": "Humano"
     },
     "title": "Definições",
     "close": "Fechar configurações",
     "support": {
       "title": "Apoiar",
       "feedback": {
-        "title": "Comentários"
+        "title": "Comentários",
+        "send": "Enviar comentários"
       },
       "about": {
         "title": "Sobre"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internacional",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Todos",
+  "countries.signed": "Todos"
 }

@@ -45,6 +45,10 @@ export class CopySignedLanguageVideo {
   static readonly type = '[Translate] Copy Signed Language Video';
 }
 
+export class CopySpokenLanguageText {
+  static readonly type = '[Translate] Copy Spoken Language Text';
+}
+
 export class ShareSignedLanguageVideo {
   static readonly type = '[Translate] Share Signed Language Video';
 }
@@ -61,4 +65,14 @@ export class UploadPoseFile {
   static readonly type = '[Translate] Upload Pose File';
 
   constructor(public url: string) {}
+}
+
+export class SuggestAlternativeText {
+  static readonly type = '[Translate] Suggest Alternative Text';
+}
+
+export class DescribeSignWritingSign {
+  static readonly type = '[Translate] Describe a Single SignWriting Sign';
+
+  constructor(public fsw: string) {}
 }

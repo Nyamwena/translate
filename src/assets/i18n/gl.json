@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "páxina non atopada",
+    "doesNotExist": "Sentímolo, a páxina que buscabas non existe.",
+    "errorLogged": "Rexistramos o erro e investigarémolo.",
+    "goHome": "Ir a Inicio"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Maiús"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Tradutor de Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Detectar idioma",
-      "more": "Máis Idiomas"
+      "more": "Máis Idiomas",
+      "detected": "{{lang}} - Detectouse"
     },
-    "feedback": "Enviar comentarios",
     "input": {
       "text": "Texto",
       "webcam": "Cámara web",
@@ -22,7 +27,6 @@
       "browse": "Buscar no ordenador",
       "title": "Escolle un vídeo"
     },
-    "description": "Unha aplicación de tradución multilingüe bidireccional en lingua de signos para escritorio e móbil",
     "spoken-to-signed": {
       "text": "Texto da lingua falada",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Cargando modelo de vídeo humano",
           "generating": "Xerando vídeo"
         }
+      },
+      "placeholder": "Introduce texto"
+    },
+    "description": "Tradución sen esforzo á lingua de signos con modelos de vangarda en tempo real. ",
+    "suggestions": {
+      "translate-from": "Traducir de",
+      "did-you-mean": "Querías dicir"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copiar a tradución"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribuír"
-    },
-    "tools": {
-      "title": "Ferramentas"
     },
     "nav": {
       "pages": "Navega a outras páxinas",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software e licenzas"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Patio de procesamento da lingua de signos"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Esqueleto",
       "avatar": "Avatar",
-      "human": "Humano"
+      "person": "Humano"
     },
     "title": "Configuración",
     "close": "Pecha a configuración",
     "support": {
       "title": "Apoiar",
       "feedback": {
-        "title": "Comentarios"
+        "title": "Comentarios",
+        "send": "Enviar comentarios"
       },
       "about": {
         "title": "Sobre"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internacional",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Todos",
+  "countries.signed": "Todos"
 }

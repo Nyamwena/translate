@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "stranica nije pronađena",
+    "doesNotExist": "Nažalost, stranica koju ste tražili ne postoji.",
+    "errorLogged": "Grešku smo prijavili i ispitat ćemo je.",
+    "goHome": "Idi kuci"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Prevodilac",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Otkrij jezik",
-      "more": "Više jezika"
+      "more": "Više jezika",
+      "detected": "{{lang}} - Otkriveno"
     },
-    "feedback": "Slanje povratnih informacija",
     "input": {
       "text": "Tekst",
       "webcam": "Web kamera",
@@ -22,7 +27,6 @@
       "browse": "Pretraži računar",
       "title": "Odaberite video"
     },
-    "description": "Dvosmjerna višejezična aplikacija za prevođenje znakovnog jezika za desktop i mobilne uređaje",
     "spoken-to-signed": {
       "text": "Tekst govornog jezika",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "Učitavanje ljudskog video modela",
           "generating": "Generisanje video zapisa"
         }
+      },
+      "placeholder": "Unesite tekst"
+    },
+    "description": "Lako prevođenje znakovnog jezika s vrhunskim modelima u stvarnom vremenu. ",
+    "suggestions": {
+      "translate-from": "Prevedi sa",
+      "did-you-mean": "Jesili mislio"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopiraj prevod"
       }
     }
   },
   "landing": {
-    "try": "ISPROBAJTE GOOGLE PREVODIOCA",
+    "try": "Isprobajte Sign Prevodioca",
     "about": {
       "title": "O programu",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Dajte svoj doprinos"
-    },
-    "tools": {
-      "title": "Alati"
     },
     "nav": {
       "pages": "Idite na druge stranice",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Softver i licence"
-    }
+    },
+    "title": "Pravni"
   },
   "playground": {
     "title": "Igralište za obradu znakovnog jezika"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skeleton",
       "avatar": "Avatar",
-      "human": "Čovjek"
+      "person": "Čovjek"
     },
     "title": "Postavke",
     "close": "Zatvorite postavke",
     "support": {
       "title": "Podrška",
       "feedback": {
-        "title": "Povratne informacije"
+        "title": "Povratne informacije",
+        "send": "Pošaljite povratne informacije"
       },
       "about": {
         "title": "O"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "International",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Sve",
+  "countries.signed": "Sve"
 }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "lehte ei leitud",
+    "doesNotExist": "Vabandust, lehekülge, mida otsisite, pole olemas.",
+    "errorLogged": "Logisime vea sisse ja uurime seda.",
+    "goHome": "Minge avalehele"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign'i tõlge",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Tuvasta keel",
-      "more": "Rohkem keeli"
+      "more": "Rohkem keeli",
+      "detected": "{{lang}} – tuvastatud"
     },
-    "feedback": "Saada tagasisidet",
     "input": {
       "text": "Tekst",
       "webcam": "Veebikaamera",
@@ -22,7 +27,6 @@
       "browse": "Sirvi arvutit",
       "title": "Valige video"
     },
-    "description": "Kahesuunaline mitmekeelne viipekeele tõlkerakendus lauaarvutitele ja mobiiltelefonidele",
     "spoken-to-signed": {
       "text": "Kõnekeelne tekst",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Inimese videomudeli laadimine",
           "generating": "Video genereerimine"
         }
+      },
+      "placeholder": "Sisesta tekst"
+    },
+    "description": "Lihtne viipekeelte tõlge tipptasemel reaalajas mudelitega. ",
+    "suggestions": {
+      "translate-from": "Tõlgi keelest",
+      "did-you-mean": "Kas sa mõtlesid"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopeeri tõlge"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Panustage"
-    },
-    "tools": {
-      "title": "Tööriistad"
     },
     "nav": {
       "pages": "Liikuge teistele lehtedele",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Tarkvara ja litsentsid"
-    }
+    },
+    "title": "Juriidiline"
   },
   "playground": {
     "title": "Viipekeele töötlemise mänguväljak"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skelett",
       "avatar": "Avatar",
-      "human": "Inimene"
+      "person": "Inimene"
     },
     "title": "Seaded",
     "close": "Sulge seaded",
     "support": {
       "title": "Toetus",
       "feedback": {
-        "title": "Tagasiside"
+        "title": "Tagasiside",
+        "send": "Saada tagasisidet"
       },
       "about": {
         "title": "Umbes"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Rahvusvaheline",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Kõik",
+  "countries.signed": "Kõik"
 }

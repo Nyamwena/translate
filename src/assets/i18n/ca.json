@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Pàgina no trobada",
+    "doesNotExist": "Ho sentim, la pàgina que estaves buscant no existeix.",
+    "errorLogged": "Hem registrat l'error i ho mirarem.",
+    "goHome": "Vés a casa"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Maj"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Traductor de Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Detecta l’idioma",
-      "more": "Més Idiomes"
+      "more": "Més Idiomes",
+      "detected": "{{lang}} - Detectat"
     },
-    "feedback": "Envia suggeriments",
     "input": {
       "text": "Text",
       "webcam": "Càmera web",
@@ -19,10 +24,9 @@
     "swapLanguages": "Intercanvia els idiomes",
     "upload": {
       "types": "Penja un .mp4, .ogv o .webm.",
-      "browse": "Cerca a l&#39;ordinador",
+      "browse": "Cerca a l'ordinador",
       "title": "Tria un vídeo"
     },
-    "description": "Una aplicació de traducció multilingüe bidireccional en llengua de signes per a ordinadors i mòbils",
     "spoken-to-signed": {
       "text": "Text en llengua parlada",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "S'està carregant el model de vídeo humà",
           "generating": "Generació de vídeo"
         }
+      },
+      "placeholder": "Introduïu text"
+    },
+    "description": "Traducció sense esforç de la llengua de signes amb models d'avantguarda en temps real. ",
+    "suggestions": {
+      "translate-from": "Traduir de",
+      "did-you-mean": "Volies dir"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copia Traducció"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribució"
-    },
-    "tools": {
-      "title": "Eines"
     },
     "nav": {
       "pages": "Navegueu a altres pàgines",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Programari i llicències"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Pati de processament de la llengua de signes"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Esquelet",
       "avatar": "Avatar",
-      "human": "Humans"
+      "person": "Humans"
     },
     "title": "Configuració",
     "close": "Tanca la configuració",
     "support": {
       "title": "Suport",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Enviar comentaris"
       },
       "about": {
         "title": "Sobre"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internacional",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Tots",
+  "countries.signed": "Tots"
 }

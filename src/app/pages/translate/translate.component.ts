@@ -1,19 +1,13 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
-import {Select, Store} from '@ngxs/store';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngxs/store';
 import {SetSetting} from '../../modules/settings/settings.actions';
 import {fromEvent, Observable} from 'rxjs';
 import {BaseComponent} from '../../components/base/base.component';
-import {takeUntil, tap} from 'rxjs/operators';
-import {
-  FlipTranslationDirection,
-  SetSignedLanguage,
-  SetSpokenLanguage,
-} from '../../modules/translate/translate.actions';
+import {filter, takeUntil, tap} from 'rxjs/operators';
 import {TranslocoService} from '@ngneat/transloco';
 import {TranslationService} from '../../modules/translate/translate.service';
-import {Capacitor} from '@capacitor/core';
-import {Keyboard} from '@capacitor/keyboard';
 import {Meta, Title} from '@angular/platform-browser';
+import {MediaMatcher} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-translate',
@@ -21,19 +15,23 @@ import {Meta, Title} from '@angular/platform-browser';
   styleUrls: ['./translate.component.scss'],
 })
 export class TranslateComponent extends BaseComponent implements OnInit {
-  @Select(state => state.translate.spokenToSigned) spokenToSigned$: Observable<boolean>;
+  spokenToSigned$: Observable<boolean>;
+  spokenToSigned: boolean;
 
-  @HostBinding('class.spoken-to-signed') spokenToSigned: boolean;
-  @HostBinding('class.keyboard-open') keyboardOpen: boolean;
+  isMobile: MediaQueryList;
 
   constructor(
     private store: Store,
     private transloco: TranslocoService,
     public translation: TranslationService,
+    private mediaMatcher: MediaMatcher,
     private meta: Meta,
     private title: Title
   ) {
     super();
+
+    this.spokenToSigned$ = this.store.select<boolean>(state => state.translate.spokenToSigned);
+    this.isMobile = this.mediaMatcher.matchMedia('screen and (max-width: 599px)');
 
     // Default settings
     this.store.dispatch([
@@ -64,27 +62,15 @@ export class TranslateComponent extends BaseComponent implements OnInit {
 
     this.spokenToSigned$
       .pipe(
-        tap(spokenToSigned => {
-          this.spokenToSigned = spokenToSigned;
-          if (!this.spokenToSigned) {
-            this.store.dispatch(new SetSetting('drawSignWriting', true));
-          }
+        filter(spokenToSigned => !spokenToSigned),
+        tap(() => {
+          this.store.dispatch(new SetSetting('drawSignWriting', true));
         }),
         takeUntil(this.ngUnsubscribe)
       )
       .subscribe();
 
-    this.initKeyboardListeners();
-
     this.playVideos();
-  }
-
-  async initKeyboardListeners() {
-    if (Capacitor.isNativePlatform()) {
-      const {Keyboard} = await import('@capacitor/keyboard');
-      Keyboard.addListener('keyboardWillShow', () => (this.keyboardOpen = true));
-      Keyboard.addListener('keyboardWillHide', () => (this.keyboardOpen = false));
-    }
   }
 
   async playVideos(): Promise<void> {
@@ -111,17 +97,5 @@ export class TranslateComponent extends BaseComponent implements OnInit {
         takeUntil(this.ngUnsubscribe)
       )
       .subscribe();
-  }
-
-  setSignedLanguage(lang: string): void {
-    this.store.dispatch(new SetSignedLanguage(lang));
-  }
-
-  setSpokenLanguage(lang: string): void {
-    this.store.dispatch(new SetSpokenLanguage(lang));
-  }
-
-  swapLanguages(): void {
-    this.store.dispatch(FlipTranslationDirection);
   }
 }

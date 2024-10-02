@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "sahifa topilmadi",
+    "doesNotExist": "Kechirasiz, siz qidirayotgan sahifa mavjud emas.",
+    "errorLogged": "Biz xatolikni qayd etdik va uni ko'rib chiqamiz.",
+    "goHome": "Uyga boring"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Tarjimon",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Avtomatik aniqlash",
-      "more": "Ko'proq tillar"
+      "more": "Ko'proq tillar",
+      "detected": "{{lang}} - Aniqlandi"
     },
-    "feedback": "Fikr-mulohaza",
     "input": {
       "text": "Matn",
       "webcam": "Vebkamera",
@@ -22,7 +27,6 @@
       "browse": "Kompyuter ichidan tanlash",
       "title": "Videoni tanlang"
     },
-    "description": "Ish stoli va mobil qurilmalar uchun ikki yoʻnalishli koʻp tilli imo-ishora tilini tarjima qilish ilovasi",
     "spoken-to-signed": {
       "text": "Og'zaki til matni",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Inson video modeli yuklanmoqda",
           "generating": "Video yaratish"
         }
+      },
+      "placeholder": "Matnni kiriting"
+    },
+    "description": "Haqiqiy vaqtda zamonaviy modellar bilan imo-ishora tilini qiyinchiliksiz tarjima qilish. ",
+    "suggestions": {
+      "translate-from": "dan tarjima qiling",
+      "did-you-mean": "Nazarda tutdingizmi"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Tarjimani nusxalash"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Hissa qo‘shish"
-    },
-    "tools": {
-      "title": "Asbob va vositalar"
     },
     "nav": {
       "pages": "Boshqa sahifalarga o'ting",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Litsenziyalar"
-    }
+    },
+    "title": "Huquqiy"
   },
   "playground": {
     "title": "Imo-ishora tilini qayta ishlash maydonchasi"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skelet",
       "avatar": "Avatar",
-      "human": "Inson"
+      "person": "Inson"
     },
     "title": "Sozlamalar",
     "close": "Sozlamalarni yoping",
     "support": {
       "title": "Qo'llab-quvvatlash",
       "feedback": {
-        "title": "Fikr-mulohaza"
+        "title": "Fikr-mulohaza",
+        "send": "Fikr-mulohaza yuboring"
       },
       "about": {
         "title": "Haqida"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Xalqaro",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Hammasi",
+  "countries.signed": "Hammasi"
 }

@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {fromEvent} from 'rxjs';
 import {BaseComponent} from '../base/base.component';
-
-const SpeechRecognition = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
+import {TooltipPosition} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-speech-to-text',
@@ -12,20 +11,23 @@ const SpeechRecognition = globalThis.SpeechRecognition || globalThis.webkitSpeec
 export class SpeechToTextComponent extends BaseComponent implements OnInit, OnChanges {
   @Input() lang = 'en';
   @Output() changeText: EventEmitter<string> = new EventEmitter<string>();
+  @Input() matTooltipPosition: TooltipPosition = 'above';
 
+  SpeechRecognition = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
   speechRecognition!: SpeechRecognition;
 
   supportError = null;
   isRecording = false;
 
   ngOnInit(): void {
-    if (!SpeechRecognition) {
+    if (!this.SpeechRecognition) {
       this.supportError = 'browser-not-supported';
       return;
     }
 
-    this.speechRecognition = new SpeechRecognition();
+    this.speechRecognition = new this.SpeechRecognition();
     this.speechRecognition.interimResults = true;
+    this.speechRecognition.continuous = false;
     this.speechRecognition.lang = this.lang;
 
     fromEvent(this.speechRecognition, 'result').subscribe((event: SpeechRecognitionEvent) => {
@@ -34,6 +36,8 @@ export class SpeechToTextComponent extends BaseComponent implements OnInit, OnCh
     });
 
     fromEvent(this.speechRecognition, 'error').subscribe((event: SpeechRecognitionErrorEvent) => {
+      console.error('error', event.error);
+
       if (['not-allowed', 'language-not-supported', 'service-not-allowed'].includes(event.error)) {
         this.supportError = event.error;
       } else {
@@ -47,10 +51,18 @@ export class SpeechToTextComponent extends BaseComponent implements OnInit, OnCh
     });
 
     fromEvent(this.speechRecognition, 'start').subscribe(() => {
+      console.error('start');
+
       this.changeText.emit('');
       this.isRecording = true;
     });
-    fromEvent(this.speechRecognition, 'end').subscribe(() => (this.isRecording = false));
+
+    // TODO: ongoing safari bug: on end, microphone is still active
+    // https://stackoverflow.com/questions/75498609/safari-webkitspeechrecognition-continuous-bug
+    fromEvent(this.speechRecognition, 'end').subscribe(() => {
+      this.isRecording = false;
+      this.speechRecognition.stop(); // Explicitly stop the recognition service, to disengage the microphone
+    });
 
     fromEvent(this.speechRecognition, 'speechend').subscribe(this.stop.bind(this));
   }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Cha deach duilleag a lorg",
+    "doesNotExist": "Duilich, chan eil an duilleag a bha thu a' sireadh ann.",
+    "errorLogged": "Tha sinn air a’ mhearachd a chlàradh agus bheir sinn sùil air.",
+    "goHome": "Rach gu Dachaigh"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Eadar-theangadair Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Mothaich dhan chànan",
-      "more": "Tuilleadh Chànanan"
+      "more": "Tuilleadh Chànanan",
+      "detected": "{{lang}} - Air a bhrath"
     },
-    "feedback": "Innis dhuinn dè do bheachd",
     "input": {
       "text": "Teacs",
       "webcam": "Camara-lìn",
@@ -22,7 +27,6 @@
       "browse": "Rùraich an coimpiutair agad",
       "title": "Tagh bhidio"
     },
-    "description": "Aplacaid eadar-theangachadh cànan soidhnidh dà-stiùiridh airson deasg is fòn-làimhe",
     "spoken-to-signed": {
       "text": "Teacs Cànain Labhairt",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Luchdaich a-nuas video duine model",
           "generating": "A ' cruthachadh bhidio"
         }
+      },
+      "placeholder": "Cuir a-steach Teacsa"
+    },
+    "description": "Eadar-theangachadh cànan soidhnidh gun oidhirp le modalan fìor-ùine adhartach. ",
+    "suggestions": {
+      "translate-from": "Eadar-theangaich bho",
+      "did-you-mean": "An robh thu a' ciallachadh"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Dèan lethbhreac den eadar-theangachadh"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Gabh pàirt"
-    },
-    "tools": {
-      "title": "Innealan"
     },
     "nav": {
       "pages": "Seòl gu duilleagan eile",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Bathar-bog is ceadachasan"
-    }
+    },
+    "title": "Laghail"
   },
   "playground": {
     "title": "Raon-cluiche Giullachd Cànain Soidhnidh"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "cnàimhneach",
       "avatar": "Avatar",
-      "human": "Duine"
+      "person": "Duine"
     },
     "title": "Suidhichidhean",
     "close": "Dùin roghainnean",
     "support": {
       "title": "Taic",
       "feedback": {
-        "title": "Fios air ais"
+        "title": "Fios air ais",
+        "send": "Cuir fios air ais"
       },
       "about": {
         "title": "Mu dheidhinn"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Eadar-nàiseanta",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Uile",
+  "countries.signed": "Uile"
 }

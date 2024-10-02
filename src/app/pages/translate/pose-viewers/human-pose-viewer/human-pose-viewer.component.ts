@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild} from '@angular/core';
 import {Pix2PixService} from '../../../../modules/pix2pix/pix2pix.service';
-import {fromEvent, interval, Observable} from 'rxjs';
+import {fromEvent, interval} from 'rxjs';
 import {takeUntil, tap} from 'rxjs/operators';
 import {BasePoseViewerComponent} from '../pose-viewer.component';
-import {Select, Store} from '@ngxs/store';
+import {Store} from '@ngxs/store';
 import {transferableImage} from '../../../../core/helpers/image/transferable';
 
 @Component({
@@ -12,7 +12,7 @@ import {transferableImage} from '../../../../core/helpers/image/transferable';
   styleUrls: ['./human-pose-viewer.component.scss'],
 })
 export class HumanPoseViewerComponent extends BasePoseViewerComponent implements AfterViewInit, OnDestroy {
-  @Select(state => state.settings.appearance) appearance$: Observable<string>;
+  appearance$ = this.store.select<string>(state => state.settings.appearance);
 
   @ViewChild('canvas') canvasEl: ElementRef<HTMLCanvasElement>;
 
@@ -78,7 +78,6 @@ export class HumanPoseViewerComponent extends BasePoseViewerComponent implements
           };
 
           for (let i = 0; i < 3; i++) {
-            // Leaving at 1, need to fix VideoEncoder timestamps
             await iterFrame();
           }
         }),
@@ -92,9 +91,19 @@ export class HumanPoseViewerComponent extends BasePoseViewerComponent implements
     this.modelReady = true; // Stop loading after first model inference
 
     const imageData = new ImageData(uint8Array, canvas.width, canvas.height);
-    await this.addCacheFrame(imageData);
-
     ctx.putImageData(imageData, 0, 0);
+
+    const imageBitmap = await createImageBitmap(imageData);
+    await this.addCacheFrame(imageBitmap);
+  }
+
+  drawFrame(bitmap: ImageBitmap, canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (this.background) {
+      ctx.fillStyle = this.background;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    ctx.drawImage(bitmap, 0, 0);
   }
 
   override reset(): void {
@@ -104,7 +113,7 @@ export class HumanPoseViewerComponent extends BasePoseViewerComponent implements
 
   async drawCache(): Promise<void> {
     // Supported in selected browsers https://caniuse.com/?search=MediaStreamTrackGenerator
-    if (this.streamWriter) {
+    if (this.videoEncoder) {
       return this.stopRecording();
     }
 
@@ -124,7 +133,7 @@ export class HumanPoseViewerComponent extends BasePoseViewerComponent implements
         tap(() => {
           i++;
           if (i < this.cache.length) {
-            ctx.putImageData(this.cache[i], 0, 0);
+            this.drawFrame(this.cache[i], canvas, ctx);
             delete this.cache[i]; // Free up memory after cached frame is no longer necessary
           } else {
             this.cacheSubscription.unsubscribe();
@@ -136,7 +145,7 @@ export class HumanPoseViewerComponent extends BasePoseViewerComponent implements
       .subscribe();
   }
 
-  progress(): number {
+  get progress(): number {
     if (!this.poseEl) {
       return 0;
     }
@@ -145,6 +154,6 @@ export class HumanPoseViewerComponent extends BasePoseViewerComponent implements
       return 0;
     }
 
-    return (100 * this.frameIndex) / this.totalFrames;
+    return this.frameIndex / this.totalFrames;
   }
 }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Página no encontrada",
+    "doesNotExist": "Lo sentimos, la página que estabas buscando no existe.",
+    "errorLogged": "Hemos registrado el error y lo investigaremos.",
+    "goHome": "Ir a casa"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "mayúscula"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Traductor",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Detectar idioma",
-      "more": "Más idiomas"
+      "more": "Más idiomas",
+      "detected": "{{lang}} - Detectado"
     },
-    "feedback": "Enviar comentarios",
     "input": {
       "text": "Texto",
       "webcam": "Cámara web",
@@ -22,7 +27,6 @@
       "browse": "Explorar computadora",
       "title": "Elige un vídeo"
     },
-    "description": "Una aplicación bidireccional de traducción de lenguaje de señas multilingüe para computadoras de escritorio y dispositivos móviles",
     "spoken-to-signed": {
       "text": "Texto en idioma hablado",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Cargando modelo de video humano",
           "generating": "Generando video"
         }
+      },
+      "placeholder": "Ingrese texto"
+    },
+    "description": "Traducción de lenguaje de señas sin esfuerzo con modelos en tiempo real de última generación. ",
+    "suggestions": {
+      "translate-from": "Traducir de",
+      "did-you-mean": "Querías decir"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copiar traducción"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribuir"
-    },
-    "tools": {
-      "title": "Herramientas"
     },
     "nav": {
       "pages": "Navegar a otras páginas",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software y licencias"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Área de juegos para el procesamiento del lenguaje de señas"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Esqueleto",
       "avatar": "Avatar",
-      "human": "Humano"
+      "person": "Humano"
     },
     "title": "Ajustes",
     "close": "Cerrar configuración",
     "support": {
       "title": "Apoyo",
       "feedback": {
-        "title": "Retroalimentación"
+        "title": "Retroalimentación",
+        "send": "Enviar comentarios"
       },
       "about": {
         "title": "Sobre"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internacional",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Todas",
+  "countries.signed": "Todas"
 }

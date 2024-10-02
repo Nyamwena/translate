@@ -5,18 +5,20 @@ span {
   margin-inline-end: 0.5em;
 }
 
-// TODO read from some file? supported languages
+/* TODO read from some file? supported languages */
 $flag-icons-included-countries: (
   'sy',
   'by',
   'bg',
   'cn',
   'hr',
+  'ch',
   'cz',
   'dk',
   'in',
   'nz',
   'gb',
+  'jo',
   'us',
   'ee',
   'fi',
@@ -46,7 +48,7 @@ $flag-icons-included-countries: (
   'tr',
   'ua',
   'pk',
-  'isl'
+  'ils'
 );
 $flag-icons-path: '/assets/flags';
 

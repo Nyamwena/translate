@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "síða ekki fundin",
+    "doesNotExist": "Því miður, síðan sem þú varst að leita að er ekki til.",
+    "errorLogged": "Við höfum skráð villuna og munum skoða hana.",
+    "goHome": "Farðu heim"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Greina tungumál",
-      "more": "Fleiri tungumál"
+      "more": "Fleiri tungumál",
+      "detected": "{{lang}} - Greinist"
     },
-    "feedback": "Senda ábendingu",
     "input": {
       "text": "Texti",
       "webcam": "Vefmyndavél",
@@ -22,7 +27,6 @@
       "browse": "Leita í tölvunni",
       "title": "Veldu myndband"
     },
-    "description": "Tvíátta fjöltyngt táknmálsþýðingarforrit fyrir skjáborð og farsíma",
     "spoken-to-signed": {
       "text": "Talað tungumál texti",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Hleður mannlegt myndbandslíkan",
           "generating": "Búa til myndband"
         }
+      },
+      "placeholder": "Sláðu inn texta"
+    },
+    "description": "Áreynslulaus táknmálsþýðing með nýjustu rauntímalíkönum. ",
+    "suggestions": {
+      "translate-from": "Þýða úr",
+      "did-you-mean": "Áttirðu við"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Afrita þýðing"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Taka þátt"
-    },
-    "tools": {
-      "title": "Verkfæri"
     },
     "nav": {
       "pages": "Farðu á aðrar síður",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Hugbúnaður og leyfi"
-    }
+    },
+    "title": "Löglegt"
   },
   "playground": {
     "title": "Leikvöllur fyrir táknmálsvinnslu"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Beinagrind",
       "avatar": "Avatar",
-      "human": "Mannlegur"
+      "person": "Mannlegur"
     },
     "title": "Stillingar",
     "close": "Lokaðu stillingum",
     "support": {
       "title": "Stuðningur",
       "feedback": {
-        "title": "Endurgjöf"
+        "title": "Endurgjöf",
+        "send": "Senda athugasemdir"
       },
       "about": {
         "title": "Um"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Alþjóðlegt",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Allt",
+  "countries.signed": "Allt"
 }

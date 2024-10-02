@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Action, NgxsOnInit, Select, State, StateContext} from '@ngxs/store';
+import {Action, NgxsOnInit, State, StateContext, Store} from '@ngxs/store';
 import {AnimationService} from './animation.service';
 import {filter, first, tap} from 'rxjs/operators';
-import {Pose} from '../pose/pose.state';
-import {Observable} from 'rxjs';
+import {EstimatedPose} from '../pose/pose.state';
 import {AnimatePose} from './animation.actions';
+import {Observable} from 'rxjs';
 
 export interface AnimationStateModel {
   tracks: {[key: string]: [number, number, number, number][]};
@@ -21,12 +21,15 @@ const initialState: AnimationStateModel = {
 })
 export class AnimationState implements NgxsOnInit {
   isAnimatePose = false;
-  @Select(state => state.pose.pose) pose$: Observable<Pose>;
-  @Select(state => state.settings.animatePose) animatePose$: Observable<boolean>;
+  pose$!: Observable<EstimatedPose>;
+  animatePose$!: Observable<boolean>;
 
-  constructor(private animation: AnimationService) {}
+  constructor(private store: Store, private animation: AnimationService) {
+    this.pose$ = this.store.select<EstimatedPose>(state => state.pose.pose);
+    this.animatePose$ = this.store.select<boolean>(state => state.settings.animatePose);
+  }
 
-  ngxsOnInit({patchState, dispatch}: StateContext<any>): void {
+  ngxsOnInit({dispatch}: StateContext<any>): void {
     // Load model once setting turns on
     this.animatePose$
       .pipe(
@@ -41,7 +44,7 @@ export class AnimationState implements NgxsOnInit {
       .pipe(
         filter(Boolean),
         filter(() => this.isAnimatePose), // Only run if needed
-        tap((pose: Pose) => dispatch(new AnimatePose(pose)))
+        tap((pose: EstimatedPose) => dispatch(new AnimatePose(pose)))
       )
       .subscribe();
   }

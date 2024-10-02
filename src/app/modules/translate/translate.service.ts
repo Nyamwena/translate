@@ -1,66 +1,62 @@
 import {Injectable} from '@angular/core';
-import {LanguageIdentifier} from 'cld3-asm';
-import {GoogleAnalyticsService} from '../../core/modules/google-analytics/google-analytics.service';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
-
-const OBSOLETE_LANGUAGE_CODES = {
-  iw: 'he',
-};
-const DEFAULT_SPOKEN_LANGUAGE = 'en';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TranslationService {
-  private cld: LanguageIdentifier;
-
   signedLanguages = [
-    'us',
-    'gb',
-    'fr',
-    'es',
-    'sy',
-    'by',
-    'bg',
-    'cn',
-    'hr',
-    'cz',
-    'dk',
-    'in',
-    'nz',
-    'ee',
-    'fi',
-    'at',
-    'de',
-    'cy',
-    'gr',
-    'is',
-    'isl',
-    'it',
-    'jp',
-    'lv',
-    'lt',
-    'ir',
-    'pl',
-    'br',
-    'pt',
-    'ro',
-    'ru',
-    'sk',
-    'ar',
-    'cl',
-    'cu',
-    'mx',
-    'se',
-    'tr',
-    'ua',
-    'pk',
+    'ase',
+    'gsg',
+    'fsl',
+    'bfi',
+    'ils',
+    'sgg',
+    'ssr',
+    'slf',
+    'ssp',
+    'jos',
+    'rsl-by',
+    'bqn',
+    'csl',
+    'csq',
+    'cse',
+    'dsl',
+    'ins',
+    'nzs',
+    'eso',
+    'fse',
+    'asq',
+    'gss-cy',
+    'gss',
+    'icl',
+    'ise',
+    'jsl',
+    'lsl',
+    'lls',
+    'psc',
+    'pso',
+    'bzs',
+    'psr',
+    'rms',
+    'rsl',
+    'svk',
+    'aed',
+    'csg',
+    'csf',
+    'mfs',
+    'swl',
+    'tsm',
+    'ukl',
+    'pks',
   ];
 
   spokenLanguages = [
     'en',
+    'de',
     'fr',
-    'es',
     'af',
     'sq',
     'am',
@@ -88,7 +84,7 @@ export class TranslationService {
     'fy',
     'gl',
     'ka',
-    'de',
+    'es',
     'el',
     'gu',
     'ht',
@@ -168,30 +164,46 @@ export class TranslationService {
     'zu',
   ];
 
-  constructor(private ga: GoogleAnalyticsService, private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  async initCld(): Promise<void> {
-    if (this.cld) {
-      return;
+  private lastSpokenLanguageSegmenter: {language: string; segmenter: Intl.Segmenter};
+
+  splitSpokenSentences(language: string, text: string): string[] {
+    // If the browser does not support the Segmenter API (FireFox<127), return the whole text as a single segment
+    if (!('Segmenter' in Intl)) {
+      return [text];
     }
-    const cld3 = await this.ga.trace('cld', 'import', () => import(/* webpackChunkName: "cld3-asm" */ 'cld3-asm'));
-    const cldFactory = await this.ga.trace('cld', 'load', () => cld3.loadModule());
-    this.cld = await this.ga.trace('cld', 'create', () => cldFactory.create(1, 500));
+
+    // Construct a segmenter for the given language, can take 1ms~
+    if (this.lastSpokenLanguageSegmenter?.language !== language) {
+      this.lastSpokenLanguageSegmenter = {
+        language,
+        segmenter: new Intl.Segmenter(language, {granularity: 'sentence'}),
+      };
+    }
+    const segments = this.lastSpokenLanguageSegmenter.segmenter.segment(text);
+    return Array.from(segments).map(segment => segment.segment);
   }
 
-  async detectSpokenLanguage(text: string): Promise<string> {
-    if (!this.cld) {
-      return DEFAULT_SPOKEN_LANGUAGE;
-    }
+  normalizeSpokenLanguageText(language: string, text: string): Observable<string> {
+    const params = new URLSearchParams();
+    params.set('lang', language);
+    params.set('text', text);
+    const url = 'https://sign.mt/api/text-normalization?' + params.toString();
 
-    const language = await this.ga.trace('cld', 'find', () => this.cld.findLanguage(text));
-    const languageCode = language.is_reliable ? language.language : DEFAULT_SPOKEN_LANGUAGE;
-    const correctedCode = OBSOLETE_LANGUAGE_CODES[languageCode] ?? languageCode;
-    return this.spokenLanguages.includes(correctedCode) ? correctedCode : DEFAULT_SPOKEN_LANGUAGE;
+    return this.http.get<{text: string}>(url).pipe(map(response => response.text));
+  }
+
+  describeSignWriting(fsw: string): Observable<string> {
+    const url = 'https://sign.mt/api/signwriting-description';
+
+    return this.http
+      .post<{result: {description: string}}>(url, {data: {fsw}})
+      .pipe(map(response => response.result.description));
   }
 
   translateSpokenToSigned(text: string, spokenLanguage: string, signedLanguage: string): string {
-    const api = 'https://spoken-to-signed-sxie2r74ua-uc.a.run.app/';
-    return `${api}?slang=${spokenLanguage}&dlang=${signedLanguage}&sentence=${encodeURIComponent(text)}`;
+    const api = 'https://us-central1-sign-mt.cloudfunctions.net/spoken_text_to_signed_pose';
+    return `${api}?text=${encodeURIComponent(text)}&spoken=${spokenLanguage}&signed=${signedLanguage}`;
   }
 }

@@ -17,7 +17,7 @@ export class TextToTextTranslationEndpoint {
   async modelFiles(direction: string, from: string, to: string): Promise<string[] | null> {
     const query = {prefix: `models/browsermt/${direction}/${from}-${to}`};
     const [files] = await this.bucket.getFiles(query);
-    const paths = files.map(f => f.metadata.name).filter(p => !p.endsWith('/'));
+    const paths = files.map(f => f.metadata.name as string).filter(p => !p.endsWith('/'));
     return paths.length > 0 ? paths : null;
   }
 
@@ -27,6 +27,7 @@ export class TextToTextTranslationEndpoint {
       const files = await this.modelFiles(direction, from, to);
       let model: TextToTextTranslationModel;
       if (files) {
+        console.log('Initializing Model', {direction, from, to});
         model = new TextToTextTranslationModel(this.bucket, from, to);
         await model.init(files);
       } else {
@@ -72,8 +73,10 @@ export class TextToTextTranslationEndpoint {
           return null;
         }
 
+        console.log('Cache hit', cache);
         result = cache.translation;
         return {
+          ...cache,
           counter: cache.counter + 1,
           timestamp: Date.now(),
         };
@@ -83,10 +86,10 @@ export class TextToTextTranslationEndpoint {
   }
 
   async request(req: express.Request, res: express.Response) {
-    // Only in-browser cache, not CDN cache, to have a more accurate cache hits counter
     res.set('Cache-Control', 'public, max-age=86400, s-maxage=0');
 
     const {direction, from, to, text} = this.parseParameters(req);
+    console.log('Requesting', {direction, from, to, text});
 
     const cache = await this.getCachedTranslation(direction, from, to, text);
     let translation: string;
@@ -94,8 +97,7 @@ export class TextToTextTranslationEndpoint {
       translation = cache;
     } else {
       const model = await this.getModel(direction, from, to);
-      translation = await model.translate(text);
-
+      translation = await model.translate(text, from, to);
       await cache.set({
         text,
         translation,
@@ -104,12 +106,14 @@ export class TextToTextTranslationEndpoint {
       });
     }
 
-    res.json({
+    const response = {
       direction,
       from,
       to,
       text: translation,
-    });
+    };
+    res.json(response);
+    console.log('Response', response);
   }
 }
 

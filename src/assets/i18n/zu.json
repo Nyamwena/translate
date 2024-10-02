@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Ikhasi alitholakali",
+    "doesNotExist": "Uxolo, ikhasi obulifuna alikho.",
+    "errorLogged": "Sifake iphutha futhi sizolibheka.",
+    "goHome": "Iya Ekhaya"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "I-Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Hlonza ulimi",
-      "more": "Izilimi Eziningi"
+      "more": "Izilimi Eziningi",
+      "detected": "{{lang}} - Kutholiwe"
     },
-    "feedback": "Thumela impendulo",
     "input": {
       "text": "Umbhalo",
       "webcam": "Ikhamera yewebhu",
@@ -22,7 +27,6 @@
       "browse": "Phequlula ikhompyutha yakho",
       "title": "Khetha ividiyo"
     },
-    "description": "Uhlelo lokusebenza lokuhumusha ulimi lwezandla oluneziqondiso ezimbili lwedeskithophu neselula",
     "spoken-to-signed": {
       "text": "Umbhalo Wolimi Olukhulunywayo",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Ilayisha imodeli yevidiyo yomuntu",
           "generating": "Ikhiqiza ividiyo"
         }
+      },
+      "placeholder": "Faka umbhalo"
+    },
+    "description": "Ukuhunyushwa Kolimi Lwezandla Okungenamzamo Okunamamodeli Asesikhathini Sangempela. ",
+    "suggestions": {
+      "translate-from": "Humusha kusuka",
+      "did-you-mean": "Ingabe kade ufuna ukuthi"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopisha Ukuhumusha"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Nikela"
-    },
-    "tools": {
-      "title": "Amathuluzi"
     },
     "nav": {
       "pages": "Zulazulela kwamanye amakhasi",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Isofthiwe namalayisense"
-    }
+    },
+    "title": "Okusemthethweni"
   },
   "playground": {
     "title": "Inkundla Yokucubungula Ulimi Lwezandla"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Uhlaka lwamathambo",
       "avatar": "Isithombe",
-      "human": "Umuntu"
+      "person": "Umuntu"
     },
     "title": "Izilungiselelo",
     "close": "Vala izilungiselelo",
     "support": {
       "title": "Ukusekela",
       "feedback": {
-        "title": "Impendulo"
+        "title": "Impendulo",
+        "send": "Thumela impendulo"
       },
       "about": {
         "title": "Mayelana"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Okwamanye amazwe",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Konke",
+  "countries.signed": "Konke"
 }

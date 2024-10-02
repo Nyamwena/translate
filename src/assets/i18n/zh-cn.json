@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "网页未找到",
+    "doesNotExist": "抱歉，您要查找的页面不存在。",
+    "errorLogged": "我们已记录错误并将进行调查。",
+    "goHome": "回家"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign 翻译",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "检测语言",
-      "more": "更多语言"
+      "more": "更多语言",
+      "detected": "{{lang}} - 检测到"
     },
-    "feedback": "发送反馈",
     "input": {
       "text": "文字",
       "webcam": "摄像头",
@@ -22,7 +27,6 @@
       "browse": "浏览您的计算机",
       "title": "选择一个视频"
     },
-    "description": "适用于桌面和移动设备的双向多语言手语翻译应用程序",
     "spoken-to-signed": {
       "text": "口语文本",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "加载人类视频模型",
           "generating": "生成视频"
         }
+      },
+      "placeholder": "输入文字"
+    },
+    "description": "使用尖端实时模型轻松进行手语翻译。",
+    "suggestions": {
+      "translate-from": "翻译自",
+      "did-you-mean": "你的意思"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "复制翻译"
       }
     }
   },
   "landing": {
-    "try": "试用 Google 翻译",
+    "try": "试用 Sign 翻译",
     "about": {
       "title": "简介",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "参与"
-    },
-    "tools": {
-      "title": "工具"
     },
     "nav": {
       "pages": "导航到其他页面",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "软件和许可"
-    }
+    },
+    "title": "合法的"
   },
   "playground": {
     "title": "手语处理游乐场"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "骨骼",
       "avatar": "阿凡达",
-      "human": "人类"
+      "person": "人类"
     },
     "title": "设置",
     "close": "关闭设置",
     "support": {
       "title": "支持",
       "feedback": {
-        "title": "反馈"
+        "title": "反馈",
+        "send": "发送反馈"
       },
       "about": {
         "title": "关于"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "国际的",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "全部",
+  "countries.signed": "全部"
 }

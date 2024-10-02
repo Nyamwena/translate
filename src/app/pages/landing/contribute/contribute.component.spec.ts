@@ -2,6 +2,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {axe, toHaveNoViolations} from 'jasmine-axe';
 
 import {ContributeComponent} from './contribute.component';
+import {IonicModule} from '@ionic/angular';
 
 describe('ContributeComponent', () => {
   let component: ContributeComponent;
@@ -10,6 +11,7 @@ describe('ContributeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ContributeComponent],
+      imports: [IonicModule.forRoot()],
     }).compileComponents();
   });
 

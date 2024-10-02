@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "sayfa bulunamadı",
+    "doesNotExist": "Üzgünüz, aradığınız sayfa mevcut değil.",
+    "errorLogged": "Hatayı kaydettik ve inceleyeceğiz.",
+    "goHome": "Eve gitmek"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Üst Karakter"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Çeviri",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Dili algıla",
-      "more": "Diğer Diller"
+      "more": "Diğer Diller",
+      "detected": "{{lang}} - Algılandı"
     },
-    "feedback": "Geri bildirim gönder",
     "input": {
       "text": "Metin",
       "webcam": "Web kamerası",
@@ -22,7 +27,6 @@
       "browse": "Bilgisayarınıza göz atın",
       "title": "Bir video seçin"
     },
-    "description": "Masaüstü ve mobil cihazlar için çift yönlü çok dilli işaret dili çeviri uygulaması",
     "spoken-to-signed": {
       "text": "Konuşulan Dil Metni",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "İnsan video modeli yükleniyor",
           "generating": "Video oluşturuluyor"
         }
+      },
+      "placeholder": "Metni Girin"
+    },
+    "description": "Son Teknoloji Gerçek Zamanlı Modellerle Zahmetsiz İşaret Dili Tercümesi. ",
+    "suggestions": {
+      "translate-from": "Den çeviri",
+      "did-you-mean": "Demek istediğin"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Çeviriyi Kopyala"
       }
     }
   },
   "landing": {
-    "try": "ÇEVİRİ&#39;Yİ DENEYİN",
+    "try": "ÇEVİRİ'Yİ DENEYİN",
     "about": {
       "title": "Hakkında",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Katkıda Bulunun"
-    },
-    "tools": {
-      "title": "Araçlar"
     },
     "nav": {
       "pages": "Diğer sayfalara gidin",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Yazılım ve Lisanslar"
-    }
+    },
+    "title": "Yasal"
   },
   "playground": {
     "title": "İşaret Dili İşleme Oyun Alanı"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "iskelet",
       "avatar": "avatar",
-      "human": "İnsan"
+      "person": "İnsan"
     },
     "title": "Ayarlar",
     "close": "Ayarları kapat",
     "support": {
       "title": "Destek",
       "feedback": {
-        "title": "Geri bildirim"
+        "title": "Geri bildirim",
+        "send": "Geribildirim yolla"
       },
       "about": {
         "title": "Hakkında"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Uluslararası",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Herşey",
+  "countries.signed": "Herşey"
 }

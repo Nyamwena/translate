@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Side net fûn",
+    "doesNotExist": "Sorry, de side wêr't jo nei sochten bestiet net.",
+    "errorLogged": "Wy hawwe de flater oanmeld en sille der nei sjen.",
+    "goHome": "Nei hús gean"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Taal werkenne",
-      "more": "Mear talen"
+      "more": "Mear talen",
+      "detected": "{{lang}} - ûntdutsen"
     },
-    "feedback": "Stjoer weromkeppeling",
     "input": {
       "text": "Tekst",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Op dyn kompjûter sykje",
       "title": "Kies in fideo"
     },
-    "description": "In bidirectionele meartalige oersettingsapp foar gebeartetaal foar buroblêd en mobyl",
     "spoken-to-signed": {
       "text": "Sprektaal Tekst",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Laden fan minsklik fideomodel",
           "generating": "It generearjen fan fideo"
         }
+      },
+      "placeholder": "Tekst ynfiere"
+    },
+    "description": "Moeiteleaze oersetting fan gebeartetaal mei moderne realtime modellen. ",
+    "suggestions": {
+      "translate-from": "Oersette fan",
+      "did-you-mean": "Bedoelde jo"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopiearje oersetting"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Meihelpe"
-    },
-    "tools": {
-      "title": "Ark"
     },
     "nav": {
       "pages": "Gean nei oare siden",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software en lisinsjes"
-    }
+    },
+    "title": "Legaal"
   },
   "playground": {
     "title": "Gebeartetaalferwurkingsboarterstún"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skelet",
       "avatar": "Avatar",
-      "human": "Minske"
+      "person": "Minske"
     },
     "title": "Ynstellings",
     "close": "Ynstellings slute",
     "support": {
       "title": "Stypje",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Kommentaar ferstjoere"
       },
       "about": {
         "title": "Oer"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Ynternasjonaal",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Alle",
+  "countries.signed": "Alle"
 }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Paġna mhux misjuba",
+    "doesNotExist": "Jiddispjacini, il-paġna li kont qed tfittex ma teżistix.",
+    "errorLogged": "Aħna illoggjaw l-iżball u se nħarsu fih.",
+    "goHome": "Mur id-Dar"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Induna bil-lingwa",
-      "more": "Aktar Lingwi"
+      "more": "Aktar Lingwi",
+      "detected": "{{lang}} - Individwat"
     },
-    "feedback": "Ibgħat feedback",
     "input": {
       "text": "Test",
       "webcam": "Kamera tal-Web",
@@ -18,11 +23,10 @@
     },
     "swapLanguages": "Aqleb il-lingwi",
     "upload": {
-      "types": "Tella&#39; .mp4, .ogv, jew .webm.",
+      "types": "Tella' .mp4, .ogv, jew .webm.",
       "browse": "Ibbrawżja l-kompjuter tiegħek",
       "title": "Agħżel vidjo"
     },
-    "description": "App bi-direzzjonali tat-traduzzjoni tal-lingwa tas-sinjali multilingwi għal desktop u mobbli",
     "spoken-to-signed": {
       "text": "Test tal-Lingwa Mitkellma",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Tagħbija tal-mudell tal-vidjo uman",
           "generating": "Ġenerazzjoni tal-vidjo"
         }
+      },
+      "placeholder": "Daħħal it-Test"
+    },
+    "description": "Traduzzjoni tal-Lingwa tas-Sinjali mingħajr Sforz b'Mudelli ta' l-Avanti f'Ħin Reali. ",
+    "suggestions": {
+      "translate-from": "Ittraduċi minn",
+      "did-you-mean": "Ridt tfisser"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopja tat-Traduzzjoni"
       }
     }
   },
@@ -57,16 +72,13 @@
     "contribute": {
       "title": "Ikkontribwixxi"
     },
-    "tools": {
-      "title": "Għodod"
-    },
     "nav": {
       "pages": "Innaviga lejn paġni oħra",
       "legal": "Innaviga lejn paġni legali"
     }
   },
   "text-to-speech": {
-    "play": "Isma&#39;",
+    "play": "Isma'",
     "cancel": "Waqfa",
     "unavailable": "L-output tal-vuċi mhuwiex disponibbli għall-lingwa magħżula"
   },
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Softwer u Liċenzji"
-    }
+    },
+    "title": "Legali"
   },
   "playground": {
     "title": "Playground tal-Ipproċessar tal-Lingwa tas-Sinjali"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skeletru",
       "avatar": "Avatar",
-      "human": "Bniedem"
+      "person": "Bniedem"
     },
     "title": "Settings",
     "close": "Agħlaq is-settings",
     "support": {
       "title": "Appoġġ",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Ibgħat feedback"
       },
       "about": {
         "title": "Dwar"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internazzjonali",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Kollha",
+  "countries.signed": "Kollha"
 }

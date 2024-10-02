@@ -1,18 +1,17 @@
 import {AfterViewInit, Component, ElementRef, HostBinding, Input, ViewChild} from '@angular/core';
-import {Select, Store} from '@ngxs/store';
+import {Store} from '@ngxs/store';
 import {combineLatest, firstValueFrom, Observable} from 'rxjs';
 import {VideoSettings, VideoStateModel} from '../../core/modules/ngxs/store/video/video.state';
 import Stats from 'stats.js';
 import {distinctUntilChanged, filter, map, takeUntil, tap} from 'rxjs/operators';
 import {BaseComponent} from '../base/base.component';
 import {wait} from '../../core/helpers/wait/wait';
-import {PoseVideoFrame} from '../../modules/pose/pose.actions';
-import {Pose, PoseStateModel} from '../../modules/pose/pose.state';
+import {LoadPoseEstimationModel, PoseVideoFrame} from '../../modules/pose/pose.actions';
+import {PoseStateModel} from '../../modules/pose/pose.state';
 import {PoseService} from '../../modules/pose/pose.service';
 import {SignWritingStateModel} from '../../modules/sign-writing/sign-writing.state';
 import {SettingsStateModel} from '../../modules/settings/settings.state';
 import {SignWritingService} from '../../modules/sign-writing/sign-writing.service';
-import {StartCamera} from '../../core/modules/ngxs/store/video/video.actions';
 
 @Component({
   selector: 'app-video',
@@ -20,17 +19,18 @@ import {StartCamera} from '../../core/modules/ngxs/store/video/video.actions';
   styleUrls: ['./video.component.scss'],
 })
 export class VideoComponent extends BaseComponent implements AfterViewInit {
-  @Select(state => state.settings) settingsState$: Observable<SettingsStateModel>;
-  @Select(state => state.settings.animatePose) animatePose$: Observable<boolean>;
+  settingsState$!: Observable<SettingsStateModel>;
+  animatePose$!: Observable<boolean>;
 
-  @Select(state => state.video) videoState$: Observable<VideoStateModel>;
-  @Select(state => state.pose) poseState$: Observable<PoseStateModel>;
-  @Select(state => state.signWriting) signWritingState$: Observable<SignWritingStateModel>;
-  @Select(state => state.detector.signingProbability) signingProbability$: Observable<number>;
+  videoState$!: Observable<VideoStateModel>;
+  poseState$!: Observable<PoseStateModel>;
+  signWritingState$!: Observable<SignWritingStateModel>;
+  signingProbability$!: Observable<number>;
 
   @ViewChild('video') videoEl: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas') canvasEl: ElementRef<HTMLCanvasElement>;
   @ViewChild('stats') statsEl: ElementRef;
+  appRootEl = document.querySelector('ion-app') ?? document.body;
 
   @HostBinding('class') aspectRatio = 'aspect-16-9';
 
@@ -38,6 +38,8 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
   @Input() displayControls = true;
 
   canvasCtx!: CanvasRenderingContext2D;
+
+  videoEnded = false;
 
   fpsStats = new Stats();
   signingStats = new Stats();
@@ -49,6 +51,13 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
     private elementRef: ElementRef
   ) {
     super();
+
+    this.settingsState$ = this.store.select<SettingsStateModel>(state => state.settings);
+    this.animatePose$ = this.store.select<boolean>(state => state.settings.animatePose);
+    this.videoState$ = this.store.select<VideoStateModel>(state => state.video);
+    this.poseState$ = this.store.select<PoseStateModel>(state => state.pose);
+    this.signWritingState$ = this.store.select<SignWritingStateModel>(state => state.signWriting);
+    this.signingProbability$ = this.store.select<number>(state => state.detector.signingProbability);
   }
 
   ngAfterViewInit(): void {
@@ -60,11 +69,13 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
     this.preloadSignWritingFont();
     this.drawChanges();
 
+    this.preloadPoseEstimationModel();
     this.videoEl.nativeElement.addEventListener('loadeddata', this.appLoop.bind(this));
+    this.videoEl.nativeElement.addEventListener('ended', () => (this.videoEnded = true));
 
-    // @ts-ignore
     const resizeObserver = new ResizeObserver(this.scaleCanvas.bind(this));
     resizeObserver.observe(this.elementRef.nativeElement);
+    resizeObserver.observe(this.appRootEl); // Catch changes when canvas becomes bigger then screen
   }
 
   async appLoop(): Promise<void> {
@@ -96,11 +107,12 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
   setCamera(): void {
     const video = this.videoEl.nativeElement;
     video.muted = true;
-    video.addEventListener('loadedmetadata', e => video.play());
+    video.addEventListener('loadedmetadata', () => video.play());
 
     this.videoState$
       .pipe(
         tap(({camera, src}) => {
+          this.videoEnded = false;
           // Either video feed or camera
           video.src = src || '';
           video.srcObject = camera;
@@ -127,14 +139,19 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
   }
 
   scaleCanvas(): void {
-    window.requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
       // Zoom canvas to 100% width
       const bbox = this.elementRef.nativeElement.getBoundingClientRect();
-      const scale = bbox.width / this.canvasEl.nativeElement.width;
-      this.canvasEl.nativeElement.style.transform = `scale(${scale})`;
+      const documentBbox = this.appRootEl.getBoundingClientRect();
+
+      const width = Math.min(bbox.width, documentBbox.width);
+      const scale = width / this.canvasEl.nativeElement.width;
+      this.canvasEl.nativeElement.style.transform = `scale(-${scale}, ${scale}) translateX(-100%)`;
 
       // Set parent element height
       this.elementRef.nativeElement.style.height = this.canvasEl.nativeElement.height * scale + 'px';
+      // Set canvas parent element width
+      this.canvasEl.nativeElement.parentElement.style.width = width + 'px';
     });
   }
 
@@ -143,7 +160,7 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
       .pipe(
         map(state => state.pose),
         filter(Boolean),
-        tap((pose: Pose) => {
+        tap(() => {
           this.fpsStats.end(); // End previous frame time
           this.fpsStats.begin(); // Start new frame time
         }),
@@ -155,6 +172,10 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
   preloadSignWritingFont(): void {
     this.canvasCtx.font = '100px SuttonSignWritingOneD';
     this.canvasCtx.fillText('Preload SignWriting', 0, 0);
+  }
+
+  preloadPoseEstimationModel(): void {
+    this.store.dispatch(LoadPoseEstimationModel);
   }
 
   drawChanges(): void {
@@ -193,12 +214,12 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
 
   setStats(): void {
     this.fpsStats.showPanel(0);
-    this.fpsStats.domElement.style.position = 'absolute';
+    this.fpsStats.dom.style.position = 'absolute';
     this.statsEl.nativeElement.appendChild(this.fpsStats.dom);
 
     // TODO this on change of input property
     if (!this.displayFps) {
-      this.fpsStats.domElement.style.display = 'none';
+      this.fpsStats.dom.style.display = 'none';
     }
 
     // Sign detection panel
@@ -206,8 +227,8 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
     this.signingStats.dom.innerHTML = '';
     this.signingStats.addPanel(signingPanel);
     this.signingStats.showPanel(0);
-    this.signingStats.domElement.style.position = 'absolute';
-    this.signingStats.domElement.style.left = '80px';
+    this.signingStats.dom.style.position = 'absolute';
+    this.signingStats.dom.style.left = '80px';
     this.statsEl.nativeElement.appendChild(this.signingStats.dom);
 
     this.setDetectorListener(signingPanel);
@@ -222,16 +243,23 @@ export class VideoComponent extends BaseComponent implements AfterViewInit {
       )
       .subscribe();
 
+    // TODO
     // Show hide panel
     this.settingsState$
       .pipe(
         map(settings => settings.detectSign),
         distinctUntilChanged(),
         tap(detectSign => {
-          this.signingStats.domElement.style.display = detectSign ? 'block' : 'none';
+          this.signingStats.dom.style.display = detectSign ? 'block' : 'none';
         }),
         takeUntil(this.ngUnsubscribe)
       )
       .subscribe();
+  }
+
+  replayVideo() {
+    this.videoEnded = false;
+    this.videoEl.nativeElement.currentTime = 0;
+    return this.videoEl.nativeElement.play();
   }
 }

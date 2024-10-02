@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Stranica nije pronađena",
+    "doesNotExist": "Nažalost, stranica koju ste tražili ne postoji.",
+    "errorLogged": "Zabilježili smo pogrešku i istražit ćemo je.",
+    "goHome": "Ići kući"
+  },
   "keyboard": {
     "ctrl": "Cmd",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Prevoditelj",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Otkrij jezik",
-      "more": "Više jezika"
+      "more": "Više jezika",
+      "detected": "{{lang}} - Otkriveno"
     },
-    "feedback": "Pošalji povratne informacije",
     "input": {
       "text": "Tekst",
       "webcam": "Web kamera",
@@ -22,7 +27,6 @@
       "browse": "Pregledajte na računalu",
       "title": "Odaberite video"
     },
-    "description": "Dvosmjerna višejezična aplikacija za prevođenje znakovnog jezika za stolna računala i mobitele",
     "spoken-to-signed": {
       "text": "Tekst na govornom jeziku",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Učitavanje ljudskog video modela",
           "generating": "Generiranje videa"
         }
+      },
+      "placeholder": "Unesite tekst"
+    },
+    "description": "Prevođenje znakovnog jezika bez napora s vrhunskim modelima u stvarnom vremenu. ",
+    "suggestions": {
+      "translate-from": "Prevedi s",
+      "did-you-mean": "Jesi li mislio"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopiraj prijevod"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Doprinesite"
-    },
-    "tools": {
-      "title": "Alati"
     },
     "nav": {
       "pages": "Idite na druge stranice",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Softver i licence"
-    }
+    },
+    "title": "Pravno"
   },
   "playground": {
     "title": "Igralište za obradu znakovnog jezika"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Kostur",
       "avatar": "Avatar",
-      "human": "ljudski"
+      "person": "ljudski"
     },
     "title": "Postavke",
     "close": "Zatvori postavke",
     "support": {
       "title": "podrška",
       "feedback": {
-        "title": "Povratne informacije"
+        "title": "Povratne informacije",
+        "send": "Pošalji povratne informacije"
       },
       "about": {
         "title": "Oko"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Međunarodni",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "svi",
+  "countries.signed": "svi"
 }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Bogga lama helin",
+    "doesNotExist": "Waan ka xunahay, bogga aad raadinaysay ma jiro.",
+    "errorLogged": "Waanu galnay khaladka waana eegi doonaa",
+    "goHome": "Aad Guriga"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Garo luuqada",
-      "more": "Luuqado badan"
+      "more": "Luuqado badan",
+      "detected": "{{lang}} - La ogaaday"
     },
-    "feedback": "Soo-dir ra&#39;yi-celin",
     "input": {
       "text": "Qoraal",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Dhex baadh kombuyuutarkaaga",
       "title": "Dooro muuqaal"
     },
-    "description": "App-ka tarjumaadda luqadaha dhegoolaha ee laba-jiho ah oo loogu talagalay miiska iyo mobilada",
     "spoken-to-signed": {
       "text": "Qoraalka Luuqadda Lagu Hadlo",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Soodejinaya qaabka muuqaalka dadka",
           "generating": "Soo saarista muuqaal"
         }
+      },
+      "placeholder": "Geli Qoraalka"
+    },
+    "description": "Turjumaada Luqadda Calaamadaha oo aan Dedaal lahayn oo leh Qaabab-Waqtiga Dhabta ah ee Goynta ",
+    "suggestions": {
+      "translate-from": "Ka soo tarjun",
+      "did-you-mean": "Ma waxaad ka waddaa"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Koobi Turjumaada"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Kudeeq"
-    },
-    "tools": {
-      "title": "Qalabka"
     },
     "nav": {
       "pages": "U gudub bogag kale",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Sooofti weerka iyo Ruqsahaha"
-    }
+    },
+    "title": "Sharci"
   },
   "playground": {
     "title": "Garoonka Kubadda Cagta ee ka Hagaajinta Luqadda Calaamadaha"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Qalfoofka",
       "avatar": "Avatar",
-      "human": "Aadane"
+      "person": "Aadane"
     },
     "title": "Dejinta",
     "close": "Xir dejinta",
     "support": {
       "title": "Taageero",
       "feedback": {
-        "title": "Jawaab celin"
+        "title": "Jawaab celin",
+        "send": "Soo-dir ra'yi-celin"
       },
       "about": {
         "title": "Ku saabsan"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Caalami",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Dhammaan",
+  "countries.signed": "Dhammaan"
 }

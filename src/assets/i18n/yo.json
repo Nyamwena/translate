@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Oju-iwe ko ri",
+    "doesNotExist": "Ma binu, oju-iwe ti o n wa ko si.",
+    "errorLogged": "A ti wọle aṣiṣe ati pe a yoo wo inu rẹ.",
+    "goHome": "Lọ si Ile"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Ṣawari ede",
-      "more": "Awọn ede diẹ sii"
+      "more": "Awọn ede diẹ sii",
+      "detected": "{{lang}} - Ti ṣe awari"
     },
-    "feedback": "Fi ijabọ ranṣẹ",
     "input": {
       "text": "Àyọkà",
       "webcam": "Kamẹra wẹẹbu",
@@ -22,7 +27,6 @@
       "browse": "Ṣàwákiri kọ̀npútà rẹ",
       "title": "Yan fidio kan"
     },
-    "description": "Ìṣàfilọ́lẹ̀ ìtúmọ̀ èdè àfọwọ́sí onísọ̀rọ̀ onísọ̀rọ̀ onísọ̀nà méjì-méjì kan fún tabili àti alágbèéká",
     "spoken-to-signed": {
       "text": "Ọrọ Èdè Sọ",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Ikojọpọ awoṣe fidio eniyan",
           "generating": "Ti o npese fidio"
         }
+      },
+      "placeholder": "Tẹ Ọrọ sii"
+    },
+    "description": "Itumọ Èdè Adití Lọ́nà Lailakitiyan pẹlu Awọn awoṣe Ige Gige Gidigidi. ",
+    "suggestions": {
+      "translate-from": "Tumọ lati",
+      "did-you-mean": "Se nkan ti o so"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Daakọ Itumọ"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Kópa"
-    },
-    "tools": {
-      "title": "Àwọn irinṣẹ́"
     },
     "nav": {
       "pages": "Lilö kiri si awọn oju-iwe miiran",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Ẹ̀yà àìrídìmú àti Àwọn Ìgbaniláyè"
-    }
+    },
+    "title": "Ofin"
   },
   "playground": {
     "title": "Ibi ibi isere ti Ṣiṣe Èdè Afọwọṣe"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Egungun",
       "avatar": "Afata",
-      "human": "Eniyan"
+      "person": "Eniyan"
     },
     "title": "Ètò",
     "close": "Pa awọn eto",
     "support": {
       "title": "Atilẹyin",
       "feedback": {
-        "title": "Esi"
+        "title": "Esi",
+        "send": "Firanṣẹ esi"
       },
       "about": {
         "title": "Nipa"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "International",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Gbogbo",
+  "countries.signed": "Gbogbo"
 }

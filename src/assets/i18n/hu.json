@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Az oldal nem található",
+    "doesNotExist": "Sajnáljuk, a keresett oldal nem létezik.",
+    "errorLogged": "A hibát naplóztuk, és megvizsgáljuk.",
+    "goHome": "Menj haza"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Fordító",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Nyelvfelismerés",
-      "more": "További nyelvek"
+      "more": "További nyelvek",
+      "detected": "{{lang}} – Észlelve"
     },
-    "feedback": "Visszajelzés küldése",
     "input": {
       "text": "Szöveg",
       "webcam": "Webkamera",
@@ -22,7 +27,6 @@
       "browse": "Tallózás a számítógépen",
       "title": "Válassz egy videót"
     },
-    "description": "Kétirányú, többnyelvű jelnyelvi fordítóalkalmazás asztali számítógépekre és mobileszközökre",
     "spoken-to-signed": {
       "text": "Beszélt nyelvű szöveg",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Emberi videomodell betöltése",
           "generating": "Videó generálása"
         }
+      },
+      "placeholder": "Írja be a szöveget"
+    },
+    "description": "Könnyű jelnyelvi fordítás élvonalbeli valós idejű modellekkel. ",
+    "suggestions": {
+      "translate-from": "Fordítás innen",
+      "did-you-mean": "Úgy értetted"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Fordítás másolása"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Együttműködés"
-    },
-    "tools": {
-      "title": "Eszközök"
     },
     "nav": {
       "pages": "Navigáljon más oldalakra",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Szoftverek és licencek"
-    }
+    },
+    "title": "Jogi"
   },
   "playground": {
     "title": "Jelnyelv-feldolgozó játszótér"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Csontváz",
       "avatar": "Avatar",
-      "human": "Emberi"
+      "person": "Emberi"
     },
     "title": "Beállítások",
     "close": "Zárja be a beállításokat",
     "support": {
       "title": "Támogatás",
       "feedback": {
-        "title": "Visszacsatolás"
+        "title": "Visszacsatolás",
+        "send": "Visszajelzés küldése"
       },
       "about": {
         "title": "Ról ről"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Nemzetközi",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Összes",
+  "countries.signed": "Összes"
 }

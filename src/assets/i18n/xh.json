@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "iphela alifumaneki",
+    "doesNotExist": "Uxolo, iphepha obulikhangela alikho.",
+    "errorLogged": "Sifake impazamo kwaye siza kujonga kuyo.",
+    "goHome": "Yiya eKhaya"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "IToliki kaSign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Fumana ulwimi",
-      "more": "Iilwimi ezingakumbi"
+      "more": "Iilwimi ezingakumbi",
+      "detected": "{{lang}} - Ichongiwe"
     },
-    "feedback": "Thumela ingxelo",
     "input": {
       "text": "Umbhalo",
       "webcam": "Iwebcam",
@@ -22,7 +27,6 @@
       "browse": "Bhrawza ikhompyutha",
       "title": "Khetha ividiyo"
     },
-    "description": "Isixhobo sokuguqulela ulwimi lwezandla oluphindwe kabini kwi-desktop kunye neselfowuni",
     "spoken-to-signed": {
       "text": "Isicatshulwa solwimi oluthethwayo",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Ilayisha imodeli yevidiyo yomntu",
           "generating": "Ukuvelisa ividiyo"
         }
+      },
+      "placeholder": "Ngenisa Okubhaliweyo"
+    },
+    "description": "Ukuguqulela ngolwimi lwezandla olungenamgudu oluneMifuziselo yeXesha lokwenyani le-Cutting-Edge. ",
+    "suggestions": {
+      "translate-from": "Guqulela ukusuka",
+      "did-you-mean": "Ingaba ubuthetha ukuba"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Khuphela Inguqulelo"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Nikela"
-    },
-    "tools": {
-      "title": "Izixhobo"
     },
     "nav": {
       "pages": "Yiya kwamanye amaphepha",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "iSoftware kunye neMigaqo"
-    }
+    },
+    "title": "Ezomthetho"
   },
   "playground": {
     "title": "Ibala lokudlala lokuLungiselela uLwimi lweZandla"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Amathambo",
       "avatar": "IAvatar",
-      "human": "Umntu"
+      "person": "Umntu"
     },
     "title": "Iisetingi",
     "close": "Vala iisetingi",
     "support": {
       "title": "Inkxaso",
       "feedback": {
-        "title": "Ingxelo"
+        "title": "Ingxelo",
+        "send": "Ukuzisa impendulo"
       },
       "about": {
         "title": "Malunga"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Amazwe ngamazwe",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Konke",
+  "countries.signed": "Konke"
 }

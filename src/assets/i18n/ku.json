@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Rûpel nehat dîtin",
+    "doesNotExist": "Bibore, rûpela ku hûn lê digeriyan tune.",
+    "errorLogged": "Me xeletî tomar kir û em ê lê bigerin.",
+    "goHome": "Biçe Malê"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Üst Karakter"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Çeviri",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Dili algıla",
-      "more": "Zêdetir Ziman"
+      "more": "Zêdetir Ziman",
+      "detected": "{{lang}} - Hat dîtin"
     },
-    "feedback": "Geri bildirim gönder",
     "input": {
       "text": "Metin",
       "webcam": "Webkamera",
@@ -22,7 +27,6 @@
       "browse": "Bilgisayarınıza göz atın",
       "title": "Vîdyoyek hilbijêrin"
     },
-    "description": "Serlêdanek wergera zimanê îşaretek pirzimanî ya du-alî ji bo sermaseya û mobîl",
     "spoken-to-signed": {
       "text": "Nivîsara Ziman Axaftinê",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Modela vîdyoya mirovî tê barkirin",
           "generating": "Vîdyoyê diafirîne"
         }
+      },
+      "placeholder": "Nivîsar binivîse"
+    },
+    "description": "Wergera Zimanê Îşaretê ya Bêhêz bi Modelên Dem-Rast ên Berbiçav. ",
+    "suggestions": {
+      "translate-from": "Wergerandin ji",
+      "did-you-mean": "Mebesta te bû"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Wergerê kopî bikin"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Beşdar bibe"
-    },
-    "tools": {
-      "title": "Amraz"
     },
     "nav": {
       "pages": "Biçe ser rûpelên din",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Nivîsbarî û Lîsans"
-    }
+    },
+    "title": "Mafî"
   },
   "playground": {
     "title": "Lîstika Pêvajoya Zimanê Îşaretê"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Hestî",
       "avatar": "Avatar",
-      "human": "Mirov"
+      "person": "Mirov"
     },
     "title": "Settings",
     "close": "Mîhengan bigire",
     "support": {
       "title": "Alîkarî",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Bersiv bişînin"
       },
       "about": {
         "title": "Ji dor"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Navnetewî",
-  "to": "{{a}} ← {{b}}"
+  "to": "{{a}} ← {{b}}",
+  "languages.spoken": "Gişt",
+  "countries.signed": "Gişt"
 }

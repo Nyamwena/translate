@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Pagina nu a fost gasita",
+    "doesNotExist": "Ne pare rău, pagina pe care o căutați nu există.",
+    "errorLogged": "Am înregistrat eroarea și o vom analiza.",
+    "goHome": "Du-te acasă"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Traducere",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Selectați limba",
-      "more": "Mai multe limbi"
+      "more": "Mai multe limbi",
+      "detected": "{{lang}} - Detectat"
     },
-    "feedback": "Trimiteți feedback",
     "input": {
       "text": "Mesaj text",
       "webcam": "Cameră web",
@@ -22,7 +27,6 @@
       "browse": "Răsfoiți pe computer",
       "title": "Alegeți un videoclip"
     },
-    "description": "O aplicație de traducere bidirecțională în limbajul semnelor multilingv pentru desktop și mobil",
     "spoken-to-signed": {
       "text": "Text în limba vorbită",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Se încarcă modelul video uman",
           "generating": "Generare video"
         }
+      },
+      "placeholder": "Introduceți text"
+    },
+    "description": "Traducere fără efort în limbajul semnelor cu modele de ultimă oră în timp real. ",
+    "suggestions": {
+      "translate-from": "Tradu din",
+      "did-you-mean": "Ai vrut să spui"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copiați traducerea"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribuiți"
-    },
-    "tools": {
-      "title": "Instrumente"
     },
     "nav": {
       "pages": "Navigați la alte pagini",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software și licențe"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Loc de joacă pentru procesarea limbajului semnelor"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Schelet",
       "avatar": "Avatar",
-      "human": "Uman"
+      "person": "Uman"
     },
     "title": "Setări",
     "close": "Închideți setările",
     "support": {
       "title": "A sustine",
       "feedback": {
-        "title": "Părere"
+        "title": "Părere",
+        "send": "Trimite feedback"
       },
       "about": {
         "title": "Despre"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internaţional",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Toate",
+  "countries.signed": "Toate"
 }

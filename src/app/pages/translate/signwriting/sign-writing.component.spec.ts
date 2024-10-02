@@ -4,10 +4,20 @@ import {axe, toHaveNoViolations} from 'jasmine-axe';
 import {SignWritingComponent} from './sign-writing.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {defineCustomElements as defineCustomElementsSW} from '@sutton-signwriting/sgnw-components/loader';
+import {NgxsModule, Store} from '@ngxs/store';
+import {ngxsConfig} from '../../../core/modules/ngxs/ngxs.module';
+import {TranslateState, TranslateStateModel} from '../../../modules/translate/translate.state';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {provideHttpClientTesting} from '@angular/common/http/testing';
+import {SettingsState} from '../../../modules/settings/settings.state';
+import {provideHttpClient} from '@angular/common/http';
 
 describe('SignWritingComponent', () => {
   let component: SignWritingComponent;
   let fixture: ComponentFixture<SignWritingComponent>;
+
+  let store: Store;
+  let snapshot: {translate: TranslateStateModel};
 
   beforeAll(async () => {
     await defineCustomElementsSW();
@@ -18,14 +28,18 @@ describe('SignWritingComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [SignWritingComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [NgxsModule.forRoot([SettingsState, TranslateState], ngxsConfig), MatTooltipModule],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     }).compileComponents();
-  });
 
-  beforeEach(() => {
+    store = TestBed.inject(Store);
+    snapshot = {...store.snapshot()};
+    snapshot.translate = {...snapshot.translate};
+    snapshot.translate.signWriting = [{fsw: 'M507x523S15a28494x496S26500493x477'}];
+    store.reset(snapshot);
+
     fixture = TestBed.createComponent(SignWritingComponent);
     component = fixture.componentInstance;
-    component.signs = ['M507x523S15a28494x496S26500493x477'];
-    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -78,10 +92,4 @@ describe('SignWritingComponent', () => {
     const newColor = await getColor();
     expect(newColor).toBe(specialColor);
   }, 10000);
-
-  it('should unregister event listener on destroy', () => {
-    const spy = spyOn(component.colorSchemeMedia, 'removeEventListener');
-    component.ngOnDestroy();
-    expect(spy).toHaveBeenCalled();
-  });
 });

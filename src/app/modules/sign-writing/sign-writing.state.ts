@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Action, NgxsOnInit, Select, State, StateContext} from '@ngxs/store';
-import {Observable} from 'rxjs';
-import {Pose} from '../pose/pose.state';
+import {Action, NgxsOnInit, State, StateContext, Store} from '@ngxs/store';
+import {EstimatedPose} from '../pose/pose.state';
 import {filter, first, tap} from 'rxjs/operators';
 import {HandsService, HandStateModel} from './hands.service';
 import {CalculateBodyFactors, EstimateFaceShape, EstimateHandShape} from './sign-writing.actions';
@@ -10,6 +9,7 @@ import {FaceService, FaceStateModel} from './face.service';
 import {ThreeService} from '../../core/services/three.service';
 import {MediapipeHolisticService} from '../../core/services/holistic.service';
 import {SignWritingService} from './sign-writing.service';
+import {Observable} from 'rxjs';
 
 export interface SignWritingStateModel {
   timestamp: number;
@@ -34,16 +34,20 @@ const initialState: SignWritingStateModel = {
 })
 export class SignWritingState implements NgxsOnInit {
   drawSignWriting = false;
-  @Select(state => state.pose.pose) pose$: Observable<Pose>;
-  @Select(state => state.settings.drawSignWriting) drawSignWriting$: Observable<boolean>;
+  pose$: Observable<EstimatedPose>;
+  drawSignWriting$: Observable<boolean>;
 
   constructor(
+    private store: Store,
     private bodyService: BodyService,
     private faceService: FaceService,
     private handsService: HandsService,
     private three: ThreeService,
     private holistic: MediapipeHolisticService
-  ) {}
+  ) {
+    this.pose$ = this.store.select<EstimatedPose>(state => state.pose.pose);
+    this.drawSignWriting$ = this.store.select<boolean>(state => state.settings.drawSignWriting);
+  }
 
   ngxsOnInit({patchState, dispatch}: StateContext<any>): void {
     // Load model once setting turns on
@@ -66,7 +70,7 @@ export class SignWritingState implements NgxsOnInit {
       .pipe(
         filter(Boolean),
         filter(() => this.drawSignWriting), // Only run if needed
-        tap((pose: Pose) => {
+        tap((pose: EstimatedPose) => {
           dispatch([
             new CalculateBodyFactors(pose),
             new EstimateFaceShape(pose.faceLandmarks, pose.image),
@@ -82,7 +86,7 @@ export class SignWritingState implements NgxsOnInit {
       .pipe(
         filter(Boolean),
         filter(() => !this.drawSignWriting), // Only run if needed
-        tap((pose: Pose) => {
+        tap(() => {
           patchState({timestamp: Date.now()});
         })
       )

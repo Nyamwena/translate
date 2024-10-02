@@ -1,12 +1,12 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {Select} from '@ngxs/store';
-import {Observable} from 'rxjs';
+import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Store} from '@ngxs/store';
 import {AnimationStateModel} from '../../modules/animation/animation.state';
 import {BaseComponent} from '../base/base.component';
 import {map, takeUntil, tap} from 'rxjs/operators';
 import {ThreeService} from '../../core/services/three.service';
 import {isIOS} from '../../core/constants';
 import {AssetsService} from 'src/app/core/services/assets/assets.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-animation',
@@ -14,7 +14,7 @@ import {AssetsService} from 'src/app/core/services/assets/assets.service';
   styleUrls: ['./animation.component.scss'],
 })
 export class AnimationComponent extends BaseComponent implements AfterViewInit {
-  @Select(state => state.animation) animationState$: Observable<AnimationStateModel>;
+  animationState$: Observable<AnimationStateModel>;
 
   @ViewChild('modelViewer') modelViewerEl: ElementRef<HTMLMediaElement>;
 
@@ -22,12 +22,15 @@ export class AnimationComponent extends BaseComponent implements AfterViewInit {
 
   static isCustomElementDefined = false;
 
-  constructor(private three: ThreeService, private assets: AssetsService) {
+  constructor(private store: Store, private three: ThreeService, private assets: AssetsService) {
     super();
+
+    this.animationState$ = this.store.select<AnimationStateModel>(state => state.animation);
 
     // Load the `model-viewer` custom element
     if (!AnimationComponent.isCustomElementDefined) {
-      import(/* webpackChunkName: "@google/model-viewer" */ '@google/model-viewer');
+      // Import lib to avoid pre-bundled version https://github.com/google/model-viewer/issues/2747
+      import(/* webpackChunkName: "@google/model-viewer" */ '@google/model-viewer/lib/model-viewer');
       AnimationComponent.isCustomElementDefined = true;
     }
   }

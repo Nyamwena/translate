@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Laman tidak dijumpai",
+    "doesNotExist": "Maaf, halaman yang anda cari tidak wujud.",
+    "errorLogged": "Kami telah melog ralat dan akan menelitinya.",
+    "goHome": "Pulang ke rumah"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Terjemah",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Kesan bahasa",
-      "more": "Lebih Banyak Bahasa"
+      "more": "Lebih Banyak Bahasa",
+      "detected": "{{lang}} - Dikesan"
     },
-    "feedback": "Hantar maklum balas",
     "input": {
       "text": "Teks",
       "webcam": "Kamera web",
@@ -22,7 +27,6 @@
       "browse": "Semak imbas komputer anda",
       "title": "Pilih video"
     },
-    "description": "Apl terjemahan bahasa isyarat berbilang hala dua arah untuk desktop dan mudah alih",
     "spoken-to-signed": {
       "text": "Teks Bahasa Pertuturan",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Memuatkan model video manusia",
           "generating": "Menjana video"
         }
+      },
+      "placeholder": "Masukkan Teks"
+    },
+    "description": "Terjemahan Bahasa Isyarat yang Mudah dengan Model Masa Nyata Termaju. ",
+    "suggestions": {
+      "translate-from": "Terjemah dari",
+      "did-you-mean": "Adakah anda maksudkan"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Salin Terjemahan"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Sumbangkan"
-    },
-    "tools": {
-      "title": "Alatan"
     },
     "nav": {
       "pages": "Navigasi ke halaman lain",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Perisian dan Lesen"
-    }
+    },
+    "title": "sah"
   },
   "playground": {
     "title": "Taman Permainan Pemprosesan Bahasa Isyarat"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Rangka",
       "avatar": "Avatar",
-      "human": "Manusia"
+      "person": "Manusia"
     },
     "title": "tetapan",
     "close": "Tutup tetapan",
     "support": {
       "title": "Sokongan",
       "feedback": {
-        "title": "Maklum balas"
+        "title": "Maklum balas",
+        "send": "Hantar maklumbalas"
       },
       "about": {
         "title": "Tentang"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "antarabangsa",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Semua",
+  "countries.signed": "Semua"
 }

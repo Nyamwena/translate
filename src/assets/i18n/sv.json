@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "sidan hittas inte",
+    "doesNotExist": "Tyvärr, sidan du letade efter finns inte.",
+    "errorLogged": "Vi har loggat felet och kommer att undersöka det.",
+    "goHome": "Gå till hemmet"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Skift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Översätt",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Identifiera språk",
-      "more": "Flera språk"
+      "more": "Flera språk",
+      "detected": "{{lang}} - Upptäckt"
     },
-    "feedback": "Skicka feedback",
     "input": {
       "text": "Text",
       "webcam": "Webbkamera",
@@ -22,7 +27,6 @@
       "browse": "Bläddra efter filer på datorn",
       "title": "Välj en video"
     },
-    "description": "En dubbelriktad flerspråkig app för översättning av teckenspråk för dator och mobil",
     "spoken-to-signed": {
       "text": "Talat språk text",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Laddar mänsklig videomodell",
           "generating": "Genererar video"
         }
+      },
+      "placeholder": "Skriv text"
+    },
+    "description": "Enkel översättning av teckenspråk med banbrytande realtidsmodeller. ",
+    "suggestions": {
+      "translate-from": "Översätt från",
+      "did-you-mean": "Menade du"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopiera översättning"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Bidra"
-    },
-    "tools": {
-      "title": "Verktyg"
     },
     "nav": {
       "pages": "Navigera till andra sidor",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Programvara och licenser"
-    }
+    },
+    "title": "Rättslig"
   },
   "playground": {
     "title": "Lekplats för teckenspråksbearbetning"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skelett",
       "avatar": "Avatar",
-      "human": "Mänsklig"
+      "person": "Mänsklig"
     },
     "title": "inställningar",
     "close": "Stäng inställningarna",
     "support": {
       "title": "Stöd",
       "feedback": {
-        "title": "Respons"
+        "title": "Respons",
+        "send": "Skicka synpunkter"
       },
       "about": {
         "title": "Handla om"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internationell",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Allt",
+  "countries.signed": "Allt"
 }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Lapa nav atrasta",
+    "doesNotExist": "Atvainojiet, lapa, kuru meklējāt, neeksistē.",
+    "errorLogged": "Mēs esam reģistrējuši kļūdu un to izskatīsim.",
+    "goHome": "Doties mājās"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign tulkotājs",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Noteikt valodu",
-      "more": "Vairāk valodu"
+      "more": "Vairāk valodu",
+      "detected": "{{lang}} — konstatēts"
     },
-    "feedback": "Sūtīt atsauksmes",
     "input": {
       "text": "Teksts",
       "webcam": "Tīmekļa kamera",
@@ -22,7 +27,6 @@
       "browse": "Pārlūkot savu datoru",
       "title": "Izvēlieties videoklipu"
     },
-    "description": "Divvirzienu daudzvalodu zīmju valodas tulkošanas lietotne galddatoriem un mobilajām ierīcēm",
     "spoken-to-signed": {
       "text": "Runas valodas teksts",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Notiek cilvēka video modeļa ielāde",
           "generating": "Notiek video ģenerēšana"
         }
+      },
+      "placeholder": "Ievadiet tekstu"
+    },
+    "description": "Vienkārša zīmju valodas tulkošana ar moderniem reāllaika modeļiem. ",
+    "suggestions": {
+      "translate-from": "Tulkot no",
+      "did-you-mean": "Vai tu domāji"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopēt tulkojumu"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Piedalīties"
-    },
-    "tools": {
-      "title": "Rīki"
     },
     "nav": {
       "pages": "Pārejiet uz citām lapām",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Programmatūra un licences"
-    }
+    },
+    "title": "Juridisks"
   },
   "playground": {
     "title": "Zīmju valodas apstrādes rotaļu laukums"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skelets",
       "avatar": "Iemiesojums",
-      "human": "Cilvēks"
+      "person": "Cilvēks"
     },
     "title": "Iestatījumi",
     "close": "Aizveriet iestatījumus",
     "support": {
       "title": "Atbalsts",
       "feedback": {
-        "title": "Atsauksmes"
+        "title": "Atsauksmes",
+        "send": "Sūtiet atsauksmes"
       },
       "about": {
         "title": "Par"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Starptautisks",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Visi",
+  "countries.signed": "Visi"
 }

@@ -3,11 +3,12 @@ import {axe, toHaveNoViolations} from 'jasmine-axe';
 
 import {LandingComponent} from './landing.component';
 import {AppTranslocoTestingModule} from '../../core/modules/transloco/transloco-testing.module';
-import {AppAngularMaterialModule} from '../../core/modules/angular-material/angular-material.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
-import {LanguageSelectorComponent} from '../../components/language-selector/language-selector.component';
 import {AboutComponent} from './about/about.component';
+import {IonicModule} from '@ionic/angular';
+import {I18NLanguageSelectorComponent} from '../../components/i18n-language-selector/i18n-language-selector.component';
+import {LandingFooterComponent} from './landing-footer/landing-footer.component';
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
@@ -15,10 +16,10 @@ describe('LandingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LandingComponent, LanguageSelectorComponent],
+      declarations: [LandingComponent, LandingFooterComponent, I18NLanguageSelectorComponent],
       imports: [
         AppTranslocoTestingModule,
-        AppAngularMaterialModule,
+        IonicModule.forRoot(),
         NoopAnimationsModule,
         RouterModule.forRoot([{path: '', component: AboutComponent}]),
       ],

@@ -1,1 +1,1 @@
-Um aplicativo de tradução de linguagem de sinais multilíngue bidirecional para desktop e dispositivos móveis
+Effortless Real-Time Sign Language Translation. Translate Sign Language instantly on desktop and mobile.

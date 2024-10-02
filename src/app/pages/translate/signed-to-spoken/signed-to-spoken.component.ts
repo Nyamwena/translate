@@ -1,9 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {Select, Store} from '@ngxs/store';
-import {Observable} from 'rxjs';
+import {Store} from '@ngxs/store';
 import {VideoStateModel} from '../../../core/modules/ngxs/store/video/video.state';
-import {InputMode} from '../../../modules/translate/translate.state';
-import {SetSignWritingText} from '../../../modules/translate/translate.actions';
+import {InputMode, SignWritingObj} from '../../../modules/translate/translate.state';
+import {
+  CopySpokenLanguageText,
+  SetSignWritingText,
+  SetSpokenLanguageText,
+} from '../../../modules/translate/translate.actions';
+import {Observable} from 'rxjs';
 
 const FAKE_WORDS = [
   {
@@ -47,7 +51,7 @@ const FAKE_WORDS = [
     sw: [
       'M507x523S15a28494x496S26500493x477',
       'M522x525S11541498x491S11549479x498S20600489x476',
-      'AS14c31S14c39S27102S27116S30300S30a00S36e00M554x585S30a00481x488S14c39465x545S14c31508x546',
+      'M554x585S30a00481x488S14c39465x545S14c31508x546',
     ],
     text: 'Your name',
   },
@@ -56,7 +60,7 @@ const FAKE_WORDS = [
     sw: [
       'M507x523S15a28494x496S26500493x477',
       'M522x525S11541498x491S11549479x498S20600489x476',
-      'AS14c31S14c39S27102S27116S30300S30a00S36e00M554x585S30a00481x488S30300481x477S14c31508x546S14c39465x545S26506539x545S26512445x545',
+      'M554x585S30a00481x488S30300481x477S14c31508x546S14c39465x545S26506539x545S26512445x545',
     ],
     text: 'Your name',
   },
@@ -65,7 +69,7 @@ const FAKE_WORDS = [
     sw: [
       'M507x523S15a28494x496S26500493x477',
       'M522x525S11541498x491S11549479x498S20600489x476',
-      'AS14c31S14c39S27102S27116S30300S30a00S36e00M554x585S30a00481x488S30300481x477S14c31508x546S14c39465x545S27102539x545S27116445x545',
+      'M554x585S30a00481x488S30300481x477S14c31508x546S14c39465x545S27102539x545S27116445x545',
     ],
     text: 'What is your name?',
   },
@@ -77,33 +81,54 @@ const FAKE_WORDS = [
   styleUrls: ['./signed-to-spoken.component.scss'],
 })
 export class SignedToSpokenComponent implements OnInit {
-  @Select(state => state.video) videoState$: Observable<VideoStateModel>;
-  @Select(state => state.translate.inputMode) inputMode$: Observable<InputMode>;
-  @Select(state => state.translate.spokenLanguage) spokenLanguage$: Observable<string>;
-  @Select(state => state.translate.signWriting) signWriting$: Observable<string[]>;
+  videoState$!: Observable<VideoStateModel>;
+  inputMode$!: Observable<InputMode>;
+  spokenLanguage$!: Observable<string>;
+  spokenLanguageText$!: Observable<string>;
 
-  // This is bullshit for now
-  translation = 'Translation';
+  constructor(private store: Store) {
+    this.videoState$ = this.store.select<VideoStateModel>(state => state.video);
+    this.inputMode$ = this.store.select<InputMode>(state => state.translate.inputMode);
+    this.spokenLanguage$ = this.store.select<string>(state => state.translate.spokenLanguage);
+    this.spokenLanguageText$ = this.store.select<string>(state => state.translate.spokenLanguageText);
 
-  constructor(private store: Store) {}
+    this.store.dispatch(new SetSpokenLanguageText(''));
+  }
 
   ngOnInit(): void {
     // To get the fake translation
-    const f = () => {
-      this.translation = 'Translation';
+    let lastArray = [];
+    let lastText = '';
 
+    const f = () => {
       const video = document.querySelector('video');
       if (video) {
+        let resultArray = [];
+        let resultText = '';
         for (const step of FAKE_WORDS) {
           if (step.time <= video.currentTime) {
-            this.translation = step.text;
-            this.store.dispatch(new SetSignWritingText(step.sw));
+            resultText = step.text;
+            resultArray = step.sw;
           }
+        }
+
+        if (resultText !== lastText) {
+          this.store.dispatch(new SetSpokenLanguageText(resultText));
+          lastText = resultText;
+        }
+
+        if (JSON.stringify(resultArray) !== JSON.stringify(lastArray)) {
+          this.store.dispatch(new SetSignWritingText(resultArray));
+          lastArray = resultArray;
         }
       }
 
       requestAnimationFrame(f);
     };
     f();
+  }
+
+  copyTranslation() {
+    this.store.dispatch(CopySpokenLanguageText);
   }
 }

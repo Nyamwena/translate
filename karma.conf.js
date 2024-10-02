@@ -1,9 +1,15 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
+const coverageDir = require('path').join(__dirname, './coverage/');
+console.log('coverageDir', coverageDir);
+
 module.exports = function (config) {
   config.set({
     basePath: '',
+    browserDisconnectTimeout: 10000, // 10 seconds
+    browserDisconnectTolerance: 2, // allow up to 2 disconnects
+    retryLimit: 2,
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
@@ -21,14 +27,16 @@ module.exports = function (config) {
         // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
         // for example, you can disable the random execution with `random: false`
         // or set a specific seed with `seed: 4321`
+        timeoutInterval: 10000,
       },
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
+      captureConsole: true, // Capture errors in the console
     },
     jasmineHtmlReporter: {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/'),
+      dir: coverageDir,
       subdir: '.',
       reporters: [{type: 'html'}, {type: 'text-summary'}, {type: 'lcovonly'}],
     },

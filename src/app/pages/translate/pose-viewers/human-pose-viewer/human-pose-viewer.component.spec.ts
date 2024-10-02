@@ -8,7 +8,7 @@ import {NgxsModule} from '@ngxs/store';
 import {SettingsState} from '../../../../modules/settings/settings.state';
 import {ngxsConfig} from '../../../../core/modules/ngxs/ngxs.module';
 import {AppTranslocoTestingModule} from '../../../../core/modules/transloco/transloco-testing.module';
-import {AppAngularMaterialModule} from '../../../../core/modules/angular-material/angular-material.module';
+import {IonicModule} from '@ionic/angular';
 
 describe('HumanPoseViewerComponent', () => {
   let component: HumanPoseViewerComponent;
@@ -19,7 +19,7 @@ describe('HumanPoseViewerComponent', () => {
       declarations: [HumanPoseViewerComponent],
       imports: [
         Pix2PixModule,
-        AppAngularMaterialModule,
+        IonicModule.forRoot(),
         NgxsModule.forRoot([SettingsState], ngxsConfig),
         AppTranslocoTestingModule,
       ],

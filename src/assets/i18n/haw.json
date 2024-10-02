@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Page aole i loaa",
+    "doesNotExist": "E kala mai, ʻaʻohe ʻaoʻao āu e ʻimi nei.",
+    "errorLogged": "Ua hoʻopaʻa inoa mākou i ka hewa a e nānā i loko.",
+    "goHome": "E hele i ka Home"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Detect language",
-      "more": "ʻŌlelo hou aku"
+      "more": "ʻŌlelo hou aku",
+      "detected": "{{lang}} - ʻIke ʻia"
     },
-    "feedback": "Send feedback",
     "input": {
       "text": "Text",
       "webcam": "Kamepa pūnaewele",
@@ -22,7 +27,6 @@
       "browse": "Browse your computer",
       "title": "E koho i kahi wikiō"
     },
-    "description": "He polokalamu unuhi ʻōlelo hōʻailona ʻelua ʻaoʻao no ka papapihi a me ka paʻa lima",
     "spoken-to-signed": {
       "text": "Palapala ʻŌlelo Haʻiʻōlelo",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Ke hoʻouka nei i ke kumu hoʻohālike wikiō kanaka",
           "generating": "Hoʻopuka wikiō"
         }
+      },
+      "placeholder": "E komo i ke kikokikona"
+    },
+    "description": "ʻO ka unuhi ʻōlelo hōʻailona ʻoluʻolu me nā hiʻohiʻona ʻokiʻoki i ka manawa maoli. ",
+    "suggestions": {
+      "translate-from": "Unuhi mai",
+      "did-you-mean": "Ua manao anei oe"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "E kope i ka unuhi"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "E komo pū"
-    },
-    "tools": {
-      "title": "Nā meahana"
     },
     "nav": {
       "pages": "E hoʻokele i nā ʻaoʻao ʻē aʻe",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Lako polokalamu a me nā laikini"
-    }
+    },
+    "title": "Kānāwai"
   },
   "playground": {
     "title": "Ke kahua pāʻani hoʻoponopono ʻōlelo hōʻailona"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Iwi",
       "avatar": "Avatar",
-      "human": "Kanaka"
+      "person": "Kanaka"
     },
     "title": "Nā hoʻonohonoho",
     "close": "Pani i nā hoʻonohonoho",
     "support": {
       "title": "Kākoʻo",
       "feedback": {
-        "title": "Manaʻo manaʻo"
+        "title": "Manaʻo manaʻo",
+        "send": "Hoʻouna manaʻo"
       },
       "about": {
         "title": "E pili ana"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "International",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "ʻO nā mea a pau",
+  "countries.signed": "ʻO nā mea a pau"
 }

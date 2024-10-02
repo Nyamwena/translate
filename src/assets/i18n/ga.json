@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Ní bhfuarthas an leathanach",
+    "doesNotExist": "Ár leithscéal, níl an leathanach a bhí á lorg agat ann.",
+    "errorLogged": "Tá an earráid logáilte againn agus déanfaimid breathnú uirthi.",
+    "goHome": "Téigh go Baile"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Aimsigh teanga",
-      "more": "Tuilleadh Teangacha"
+      "more": "Tuilleadh Teangacha",
+      "detected": "{{lang}} - Braitheadh"
     },
-    "feedback": "Seol aiseolas",
     "input": {
       "text": "Téacs",
       "webcam": "Ceamara gréasáin",
@@ -22,7 +27,6 @@
       "browse": "Brabhsáil do ríomhaire",
       "title": "Roghnaigh físeán"
     },
-    "description": "Aip déthreorach ilteangach aistriúcháin teanga chomharthaíochta do ríomhaire deisce agus do shoghluaiste",
     "spoken-to-signed": {
       "text": "Téacs Teanga Labhartha",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Íosluchtaigh físeán múnla daonna",
           "generating": "Físeán a ghiniúint"
         }
+      },
+      "placeholder": "Iontráil Téacs"
+    },
+    "description": "Aistriúchán Teanga Chomharthaíochta Gan stró le Múnlaí Ceannródaíocha Fíor-Ama. ",
+    "suggestions": {
+      "translate-from": "Aistrigh ó",
+      "did-you-mean": "Raibh i gceist agat"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Cóipeáil Aistriúchán"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Déan do chuid"
-    },
-    "tools": {
-      "title": "Uirlisí"
     },
     "nav": {
       "pages": "Déan nascleanúint go leathanaigh eile",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Bogearraí agus Ceadúnais"
-    }
+    },
+    "title": "Dlíthiúil"
   },
   "playground": {
     "title": "Clós Súgartha Próiseála Teanga Chomharthaíochta"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "creatlach",
       "avatar": "Avatar",
-      "human": "Duine"
+      "person": "Duine"
     },
     "title": "Socruithe",
     "close": "Dún socruithe",
     "support": {
       "title": "Tacaíocht",
       "feedback": {
-        "title": "Aiseolas"
+        "title": "Aiseolas",
+        "send": "Seol Aiseolas"
       },
       "about": {
         "title": "Faoi"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Idirnáisiúnta",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Gach",
+  "countries.signed": "Gach"
 }

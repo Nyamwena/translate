@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Tsamba silinapezeke",
+    "doesNotExist": "Pepani, tsamba lomwe mumayang'ana kulibe.",
+    "errorLogged": "Talowetsa zolakwikazo ndipo tiyang'ana.",
+    "goHome": "Pitani Kunyumba"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Zomasulira za Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Fufuzani chilankhulo",
-      "more": "Zinenero Zambiri"
+      "more": "Zinenero Zambiri",
+      "detected": "{{lang}} - Zapezeka"
     },
-    "feedback": "Tumizani maganizo anu",
     "input": {
       "text": "Malemba",
       "webcam": "Webukamu",
@@ -22,7 +27,6 @@
       "browse": "Chitani burauzi kompyuta",
       "title": "Sankhani kanema"
     },
-    "description": "Pulogalamu yomasulira zinenero zambiri m'zinenero zambiri zamakompyuta ndi mafoni",
     "spoken-to-signed": {
       "text": "Mawu a Chinenero Cholankhulidwa",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Kutsegula chitsanzo chamavidiyo amunthu",
           "generating": "Kupanga kanema"
         }
+      },
+      "placeholder": "Lowetsani Mawu"
+    },
+    "description": "Kumasulira Kosavuta kwa Chinenero Chamanja ndi Ma Models a Nthawi Yeniyeni. ",
+    "suggestions": {
+      "translate-from": "Tanthauzirani kuchokera",
+      "did-you-mean": "Kodi mumatanthauza"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Koperani Kumasulira"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Thandizirani"
-    },
-    "tools": {
-      "title": "Zipangizo"
     },
     "nav": {
       "pages": "Yendetsani kumasamba ena",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Mapulogalamu ndi Malaisensi"
-    }
+    },
+    "title": "Zalamulo"
   },
   "playground": {
     "title": "Malo Osewerera Chinenero Chamanja"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Chigoba",
       "avatar": "Avatar",
-      "human": "Munthu"
+      "person": "Munthu"
     },
     "title": "Zokonda",
     "close": "Tsekani zokonda",
     "support": {
       "title": "Thandizo",
       "feedback": {
-        "title": "Ndemanga"
+        "title": "Ndemanga",
+        "send": "Tumizani ndemanga"
       },
       "about": {
         "title": "Za"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Mayiko",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Zonse",
+  "countries.signed": "Zonse"
 }

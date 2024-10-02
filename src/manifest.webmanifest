@@ -1,5 +1,5 @@
 {
-  "name": "Sign Translate",
+  "name": "sign",
   "short_name": "Sign Translate",
   "scope": "/",
   "id": "sign.mt",
@@ -41,7 +41,9 @@
     {
       "action": "/",
       "accept": {
-        "application/*": [".pose"]
+        "application/*": [
+          ".pose"
+        ]
       },
       "icons": [],
       "launch_type": "multiple-clients"

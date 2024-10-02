@@ -1,20 +1,22 @@
-import * as tf from '@tensorflow/tfjs';
+import type * as tf from '@tensorflow/tfjs';
 import {Injectable} from '@angular/core';
-import {loadTFDS} from './tfjs.loader';
+import {loadTFJS} from './tfjs.loader';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TensorflowService {
-  private importPromise: Promise<typeof tf>;
+  private static importPromise: Promise<typeof tf>;
   private tf: typeof tf;
 
-  async load(): Promise<typeof tf> {
-    if (!this.importPromise) {
-      this.importPromise = loadTFDS().then(module => (this.tf = module));
+  async load(): Promise<void> {
+    if (!TensorflowService.importPromise) {
+      TensorflowService.importPromise = loadTFJS();
     }
 
-    return this.importPromise;
+    this.tf = await TensorflowService.importPromise;
+
+    return this.tf.ready();
   }
 
   // TODO implement a global getter to get all properties from tf

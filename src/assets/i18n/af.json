@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "bladsy nie gevind nie",
+    "doesNotExist": "Jammer, die bladsy waarna jy gesoek het, bestaan ​​nie.",
+    "errorLogged": "Ons het die fout aangeteken en sal daarna kyk.",
+    "goHome": "Gaan huis toe"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Vertaal",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Bespeur taal",
-      "more": "Meer tale"
+      "more": "Meer tale",
+      "detected": "{{lang}} - Bespeur"
     },
-    "feedback": "Stuur terugvoer",
     "input": {
       "text": "Teks",
       "webcam": "Webkamera",
@@ -18,11 +23,10 @@
     },
     "swapLanguages": "Ruil tale om",
     "upload": {
-      "types": "Laai &#39;n .mp4, .ogv of .webm op.",
+      "types": "Laai 'n .mp4, .ogv of .webm op.",
       "browse": "Blaai deur jou rekenaar",
       "title": "Kies 'n video"
     },
-    "description": "'n Tweerigting veeltalige gebaretaalvertalingstoepassing vir rekenaars en selfone",
     "spoken-to-signed": {
       "text": "Gesproke Taalteks",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "Laai tans menslike videomodel",
           "generating": "Genereer video"
         }
+      },
+      "placeholder": "Voer teks in"
+    },
+    "description": "Moeitelose gebaretaalvertaling met die nuutste intydse modelle. ",
+    "suggestions": {
+      "translate-from": "Vertaal uit",
+      "did-you-mean": "Het jy bedoel"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopieer vertaling"
       }
     }
   },
   "landing": {
-    "try": "PROBEER GOOGLE VERTAAL",
+    "try": "Probeer Sign Vertaal",
     "about": {
       "title": "Meer oor",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Dra by"
-    },
-    "tools": {
-      "title": "Nutsgoed"
     },
     "nav": {
       "pages": "Navigeer na ander bladsye",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Sagteware en lisensies"
-    }
+    },
+    "title": "Wettig"
   },
   "playground": {
     "title": "Gebaretaalverwerking speelgrond"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Geraamte",
       "avatar": "Avatar",
-      "human": "Mens"
+      "person": "Mens"
     },
     "title": "Instellings",
     "close": "Maak instellings toe",
     "support": {
       "title": "Ondersteuning",
       "feedback": {
-        "title": "Terugvoer"
+        "title": "Terugvoer",
+        "send": "Stuur terugvoering"
       },
       "about": {
         "title": "Oor"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internasionaal",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Almal",
+  "countries.signed": "Almal"
 }

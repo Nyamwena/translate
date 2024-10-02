@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Pagina micca trovu",
+    "doesNotExist": "Scusate, a pagina chì cercavate ùn esiste micca.",
+    "errorLogged": "Avemu registratu l'errore è guardemu in questu.",
+    "goHome": "Andà à Home"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Traduction",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Détecter la langue",
-      "more": "Più Lingue"
+      "more": "Più Lingue",
+      "detected": "{{lang}} - Detected"
     },
-    "feedback": "Envoyer des commentaires",
     "input": {
       "text": "Testu",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Circà nantu à u to urdinatori",
       "title": "Sceglite un video"
     },
-    "description": "Una app di traduzione bidirezionale in lingua di i segni multilingue per desktop è mobile",
     "spoken-to-signed": {
       "text": "Testu in lingua parlata",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Caricà u mudellu di video umanu",
           "generating": "Generazione di video"
         }
+      },
+      "placeholder": "Entre u testu"
+    },
+    "description": "Traduzzione in lingua di i segni senza sforzu cù mudelli di punta in tempu reale. ",
+    "suggestions": {
+      "translate-from": "Traduce da",
+      "did-you-mean": "Vuliti dì"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copy Translation"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribuer"
-    },
-    "tools": {
-      "title": "Outils"
     },
     "nav": {
       "pages": "Navigate à altre pagine",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Lugiziali è Licenzi"
-    }
+    },
+    "title": "Legale"
   },
   "playground": {
     "title": "Playground di Trattamentu di a Lingua di i Signi"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "scheletru",
       "avatar": "Avatar",
-      "human": "umanu"
+      "person": "umanu"
     },
     "title": "Settings",
     "close": "Chiudi i paràmetri",
     "support": {
       "title": "Supportu",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Mandate feedback"
       },
       "about": {
         "title": "À propositu"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Internaziunale",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Tuttu",
+  "countries.signed": "Tuttu"
 }

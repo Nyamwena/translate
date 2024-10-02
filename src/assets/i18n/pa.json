@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "ਪੰਨਾ ਮਿਲਿਆ ਨਹੀਂ",
+    "doesNotExist": "ਮਾਫ਼ ਕਰਨਾ, ਜਿਸ ਪੰਨੇ ਨੂੰ ਤੁਸੀਂ ਲੱਭ ਰਹੇ ਸੀ ਉਹ ਮੌਜੂਦ ਨਹੀਂ ਹੈ।",
+    "errorLogged": "ਅਸੀਂ ਗਲਤੀ ਨੂੰ ਲੌਗ ਕੀਤਾ ਹੈ ਅਤੇ ਇਸਦੀ ਜਾਂਚ ਕਰਾਂਗੇ।",
+    "goHome": "ਘਰ 'ਤੇ ਜਾਓ"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "ਭਾਸ਼ਾ ਖੋਜੋ",
-      "more": "ਹੋਰ ਭਾਸ਼ਾਵਾਂ"
+      "more": "ਹੋਰ ਭਾਸ਼ਾਵਾਂ",
+      "detected": "{{lang}} - ਖੋਜਿਆ ਗਿਆ"
     },
-    "feedback": "ਪ੍ਰਤੀਕਿਰਆ ਭੇਜੋ",
     "input": {
       "text": "ਲਿਖਤ",
       "webcam": "ਵੈਬਕੈਮ",
@@ -22,7 +27,6 @@
       "browse": "ਆਪਣਾ ਕੰਪਿਊਟਰ ਬ੍ਰਾਊਜ਼ ਕਰੋ",
       "title": "ਇੱਕ ਵੀਡੀਓ ਚੁਣੋ"
     },
-    "description": "ਡੈਸਕਟਾਪ ਅਤੇ ਮੋਬਾਈਲ ਲਈ ਇੱਕ ਦੋ-ਦਿਸ਼ਾਵੀ ਬਹੁ-ਭਾਸ਼ਾਈ ਸੈਨਤ ਭਾਸ਼ਾ ਅਨੁਵਾਦ ਐਪ",
     "spoken-to-signed": {
       "text": "ਬੋਲੀ ਦੀ ਭਾਸ਼ਾ ਦਾ ਪਾਠ",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "ਮਨੁੱਖੀ ਵੀਡੀਓ ਮਾਡਲ ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ",
           "generating": "ਵੀਡੀਓ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
         }
+      },
+      "placeholder": "ਟੈਕਸਟ ਦਰਜ ਕਰੋ"
+    },
+    "description": "ਕਟਿੰਗ-ਐਜ ਰੀਅਲ-ਟਾਈਮ ਮਾਡਲਾਂ ਦੇ ਨਾਲ ਅਣਥੱਕ ਸੈਨਤ ਭਾਸ਼ਾ ਅਨੁਵਾਦ। ",
+    "suggestions": {
+      "translate-from": "ਤੋਂ ਅਨੁਵਾਦ ਕਰੋ",
+      "did-you-mean": "ਕੀ ਤੁਹਾਡਾ ਮਤਲਬ"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "ਅਨੁਵਾਦ ਕਾਪੀ ਕਰੋ"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "ਯੋਗਦਾਨ ਪਾਓ"
-    },
-    "tools": {
-      "title": "ਔਜ਼ਾਰ"
     },
     "nav": {
       "pages": "ਹੋਰ ਪੰਨਿਆਂ 'ਤੇ ਨੈਵੀਗੇਟ ਕਰੋ",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "ਸਾਫਟਵੇਅਰ ਅਤੇ ਲਾਇਸੰਸ"
-    }
+    },
+    "title": "ਕਾਨੂੰਨੀ"
   },
   "playground": {
     "title": "ਸੈਨਤ ਭਾਸ਼ਾ ਪ੍ਰੋਸੈਸਿੰਗ ਖੇਡ ਦਾ ਮੈਦਾਨ"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "ਪਿੰਜਰ",
       "avatar": "ਅਵਤਾਰ",
-      "human": "ਮਨੁੱਖੀ"
+      "person": "ਮਨੁੱਖੀ"
     },
     "title": "ਸੈਟਿੰਗਾਂ",
     "close": "ਸੈਟਿੰਗਾਂ ਬੰਦ ਕਰੋ",
     "support": {
       "title": "ਸਪੋਰਟ",
       "feedback": {
-        "title": "ਸੁਝਾਅ"
+        "title": "ਸੁਝਾਅ",
+        "send": "ਫੀਡਬੈਕ ਭੇਜੋ"
       },
       "about": {
         "title": "ਬਾਰੇ"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "ਅੰਤਰਰਾਸ਼ਟਰੀ",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "ਸਾਰੇ",
+  "countries.signed": "ਸਾਰੇ"
 }

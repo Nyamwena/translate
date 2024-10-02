@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Action, NgxsOnInit, State, StateContext, Store} from '@ngxs/store';
 import {PoseService} from './pose.service';
-import {PoseVideoFrame, StoreFramePose} from './pose.actions';
+import {LoadPoseEstimationModel, PoseVideoFrame, StoreFramePose} from './pose.actions';
 
 export interface PoseLandmark {
   x: number;
@@ -12,7 +12,7 @@ export interface PoseLandmark {
 
 export const EMPTY_LANDMARK: PoseLandmark = {x: 0, y: 0, z: 0};
 
-export interface Pose {
+export interface EstimatedPose {
   faceLandmarks: PoseLandmark[];
   poseLandmarks: PoseLandmark[];
   rightHandLandmarks: PoseLandmark[];
@@ -22,7 +22,7 @@ export interface Pose {
 
 export interface PoseStateModel {
   isLoaded: boolean;
-  pose: Pose;
+  pose: EstimatedPose;
 }
 
 const initialState: PoseStateModel = {
@@ -38,9 +38,9 @@ const initialState: PoseStateModel = {
 export class PoseState implements NgxsOnInit {
   constructor(private poseService: PoseService, private store: Store) {}
 
-  ngxsOnInit(ctx?: StateContext<any>): void {
+  ngxsOnInit(): void {
     this.poseService.onResults(results => {
-      // TODO: passing the `image` canvas through NGXS bugs the pose.
+      // TODO: passing the `image` canvas through NGXS bugs the pose. (last verified 2024/02/28)
       // https://github.com/google/mediapipe/issues/2422
       const fakeImage = document.createElement('canvas');
       fakeImage.width = results.image.width;
@@ -59,6 +59,11 @@ export class PoseState implements NgxsOnInit {
         })
       );
     });
+  }
+
+  @Action(LoadPoseEstimationModel)
+  async loadPose(): Promise<void> {
+    await this.poseService.load();
   }
 
   @Action(PoseVideoFrame)

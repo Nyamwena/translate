@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Siden blev ikke fundet",
+    "doesNotExist": "Beklager, siden du ledte efter eksisterer ikke.",
+    "errorLogged": "Vi har logget fejlen og vil undersøge det.",
+    "goHome": "Gå hjem"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Oversæt",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Registrer sprog",
-      "more": "Flere sprog"
+      "more": "Flere sprog",
+      "detected": "{{lang}} - fundet"
     },
-    "feedback": "Send feedback",
     "input": {
       "text": "Tekst",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Find en fil på din computer",
       "title": "Vælg en video"
     },
-    "description": "En tovejs flersproget tegnsprogsoversættelsesapp til desktop og mobil",
     "spoken-to-signed": {
       "text": "Talt sprog tekst",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Indlæser menneskelig videomodel",
           "generating": "Generering af video"
         }
+      },
+      "placeholder": "Indtast tekst"
+    },
+    "description": "Ubesværet tegnsprogsoversættelse med banebrydende realtidsmodeller. ",
+    "suggestions": {
+      "translate-from": "Oversæt fra",
+      "did-you-mean": "Mente du"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopi oversættelse"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Bidrag"
-    },
-    "tools": {
-      "title": "Værktøjer"
     },
     "nav": {
       "pages": "Naviger til andre sider",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software og licenser"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Tegnsprogsbehandlingslegeplads"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skelet",
       "avatar": "Avatar",
-      "human": "Human"
+      "person": "Human"
     },
     "title": "Indstillinger",
     "close": "Luk indstillinger",
     "support": {
       "title": "Support",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Send feedback"
       },
       "about": {
         "title": "Om"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "International",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Alle",
+  "countries.signed": "Alle"
 }

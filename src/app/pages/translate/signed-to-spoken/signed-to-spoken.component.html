@@ -1,27 +1,42 @@
-<ng-container *ngIf="inputMode$ | async as inputMode">
-  <ng-container *ngIf="inputMode === 'upload'">
-    <ng-container *ngIf="videoState$ | async as videoState">
-      <app-upload *ngIf="!videoState.src"></app-upload>
-      <div *ngIf="videoState.src" class="interface">
-        <div class="sign-language">
-          <app-video [displayControls]="false" [displayFps]="false"></app-video>
-        </div>
-        <app-sign-writing [signs]="signWriting$ | async"></app-sign-writing>
-        <div class="translation-text">{{ translation }}</div>
-      </div>
-    </ng-container>
-  </ng-container>
+@if (inputMode$ | async; as inputMode) { @switch (inputMode) { @case ('upload') { @if (videoState$ | async; as
+videoState) { @if (!videoState.src) {
+<app-upload />
+} @else {
+<ng-container *ngTemplateOutlet="translationTemplate"></ng-container>
+} } } @case ('webcam') {
+<ng-container *ngTemplateOutlet="translationTemplate"></ng-container>
+} } }
 
-  <div *ngIf="inputMode === 'webcam'" class="interface">
+<ng-template #translationTemplate>
+  <div class="interface">
     <div class="sign-language">
       <app-video [displayControls]="false" [displayFps]="false"></app-video>
     </div>
 
+    <app-sign-writing />
+
+    @if (spokenLanguageText$ | async; as translation) {
     <div class="translation-text">
-      <div>Translation</div>
+      <div>{{ translation }}</div>
+
+      @if (translation !== '') {
       <div>
-        <app-text-to-speech [lang]="spokenLanguage$ | async" [text]="'Translation'"></app-text-to-speech>
+        <app-text-to-speech [lang]="spokenLanguage$ | async" [text]="translation"></app-text-to-speech>
+
+        <ion-button
+          class="circle-icon"
+          fill="clear"
+          shape="round"
+          color="dark"
+          (click)="copyTranslation()"
+          [attr.aria-label]="'translate.signed-to-spoken.actions.copy' | transloco"
+          [matTooltip]="'translate.signed-to-spoken.actions.copy' | transloco"
+          [matTooltipPosition]="'above'">
+          <ion-icon name="copy-outline" slot="icon-only"></ion-icon>
+        </ion-button>
       </div>
+      }
     </div>
+    }
   </div>
-</ng-container>
+</ng-template>

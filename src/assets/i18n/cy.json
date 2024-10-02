@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Tudalen heb ei chanfod",
+    "doesNotExist": "Mae'n ddrwg gennym, nid yw'r dudalen roeddech yn chwilio amdani yn bodoli.",
+    "errorLogged": "Rydym wedi cofnodi'r gwall a byddwn yn ymchwilio iddo.",
+    "goHome": "Ewch i Gartref"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Cyfieithu",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Synhwyro iaith",
-      "more": "Mwy o Ieithoedd"
+      "more": "Mwy o Ieithoedd",
+      "detected": "{{ lang}} - Wedi canfod"
     },
-    "feedback": "Anfon adborth",
     "input": {
       "text": "Testun",
       "webcam": "Gwegamera",
@@ -22,7 +27,6 @@
       "browse": "Pori eich cyfrifiadur",
       "title": "Dewiswch fideo"
     },
-    "description": "Ap cyfieithu iaith arwyddion dwy-gyfeiriadol ar gyfer bwrdd gwaith a ffôn symudol",
     "spoken-to-signed": {
       "text": "Testun Iaith Lafar",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "Llwytho model fideo dynol",
           "generating": "Cynhyrchu fideo"
         }
+      },
+      "placeholder": "Rhowch Testun"
+    },
+    "description": "Cyfieithu Iaith Arwyddion Ddiymdrech gyda Modelau Amser Real blaengar. ",
+    "suggestions": {
+      "translate-from": "Cyfieithwch o",
+      "did-you-mean": "Oeddech chi'n ei olygu"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copi Cyfieithiad"
       }
     }
   },
   "landing": {
-    "try": "RHOWCH GYNNIG AR GOOGLE CYFIEITHU",
+    "try": "Rhowch Gynnig Ar Sign Cyfieithu",
     "about": {
       "title": "Ynglŷn â",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Cyfrannu"
-    },
-    "tools": {
-      "title": "Offer"
     },
     "nav": {
       "pages": "Llywiwch i dudalennau eraill",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Meddalwedd a Thrwyddedau"
-    }
+    },
+    "title": "Cyfreithiol"
   },
   "playground": {
     "title": "Maes Chwarae Prosesu Iaith Arwyddion"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "sgerbwd",
       "avatar": "Avatar",
-      "human": "Dynol"
+      "person": "Dynol"
     },
     "title": "Gosodiadau",
     "close": "Cau gosodiadau",
     "support": {
       "title": "Cefnogaeth",
       "feedback": {
-        "title": "Adborth"
+        "title": "Adborth",
+        "send": "Anfon adborth"
       },
       "about": {
         "title": "Ynghylch"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Rhyngwladol",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "I gyd",
+  "countries.signed": "I gyd"
 }

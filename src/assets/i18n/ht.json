@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Paj la pa jwenn",
+    "doesNotExist": "Padon, paj ou t'ap chache a pa egziste.",
+    "errorLogged": "Nou te konekte erè a epi nou pral gade nan li.",
+    "goHome": "Ale nan Kay"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Detekte lang",
-      "more": "Plis Lang"
+      "more": "Plis Lang",
+      "detected": "{{lang}} - Detekte"
     },
-    "feedback": "Voye remak w",
     "input": {
       "text": "Tèks",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Navige sou òdinatè w lan",
       "title": "Chwazi yon videyo"
     },
-    "description": "Yon aplikasyon tradiksyon lang siy bi-direksyon miltiling pou Desktop ak mobil",
     "spoken-to-signed": {
       "text": "Tèks langaj pale",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Chaje modèl videyo imen",
           "generating": "Jenere videyo"
         }
+      },
+      "placeholder": "Antre tèks"
+    },
+    "description": "Tradiksyon lang siy san efò ak modèl dènye kri an tan reyèl. ",
+    "suggestions": {
+      "translate-from": "Tradui soti nan",
+      "did-you-mean": "Èske ou te vle di"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopi Tradiksyon"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Kontribye"
-    },
-    "tools": {
-      "title": "Zouti yo"
     },
     "nav": {
       "pages": "Navige nan lòt paj",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Lojisyèl ak Lisans yo"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Lakou rekreyasyon pou trete lang siy"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Kilè eskèlèt",
       "avatar": "Avatar",
-      "human": "Moun"
+      "person": "Moun"
     },
     "title": "Anviwònman",
     "close": "Fèmen anviwònman yo",
     "support": {
       "title": "Sipò",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Voye fidbak"
       },
       "about": {
         "title": "Konsènan"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Entènasyonal",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Tout",
+  "countries.signed": "Tout"
 }

@@ -4,9 +4,8 @@ import {env} from './env';
 
 const config: CapacitorConfig = {
   appId: 'mt.sign.translate',
-  appName: 'Sign Translate',
+  appName: 'sign',
   webDir: 'dist/sign-translate/browser',
-  bundledWebRuntime: false,
   server: getServer(),
   plugins: {
     SplashScreen: {
@@ -16,9 +15,11 @@ const config: CapacitorConfig = {
   },
   ios: {
     path: 'ios',
+    webContentsDebuggingEnabled: true,
   },
   android: {
     path: 'android',
+    useLegacyBridge: false,
   },
 };
 

@@ -1,54 +1,73 @@
-import {Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {BaseComponent} from '../../../components/base/base.component';
 import {fromEvent, Subscription} from 'rxjs';
 import {takeUntil, tap} from 'rxjs/operators';
 import {Store} from '@ngxs/store';
 import {SetSignedLanguageVideo} from '../../../modules/translate/translate.actions';
-import {defineCustomElements as defineCustomElementsPoseViewer} from 'pose-viewer/loader';
-
-interface CanvasElement extends HTMLCanvasElement {
-  captureStream(frameRate?: number): MediaStream;
-}
-
-const BPS = 1_000_000_000; // 1GBps, to act as infinity
+import {PlayableVideoEncoder} from './playable-video-encoder';
+import {isChrome} from '../../../core/constants';
 
 @Component({
   selector: 'app-pose-viewer',
   template: ``,
   styles: [],
 })
-export abstract class BasePoseViewerComponent extends BaseComponent implements OnDestroy {
+export abstract class BasePoseViewerComponent extends BaseComponent implements OnInit, OnDestroy {
   @ViewChild('poseViewer') poseEl: ElementRef<HTMLPoseViewerElement>;
 
+  background: string = '';
+
   // Using cache and MediaRecorder for older browsers, and safari
-  mimeTypes = ['video/webm; codecs=vp9', 'video/webm; codecs=vp8', 'video/webm', 'video/mp4', 'video/ogv'];
+  mimeTypes = ['video/webm; codecs:vp9', 'video/webm; codecs:vp8', 'video/webm', 'video/mp4', 'video/ogv'];
   mediaRecorder: MediaRecorder;
+  mediaSubscriptions: Subscription[] = [];
 
-  // Use a writeable stream on supported browsers
-  streamWriter: WritableStreamDefaultWriter;
-  frameIndex = 0;
+  // Use a video encoder on supported browsers
+  videoEncoder: PlayableVideoEncoder;
 
-  cache: ImageData[] = [];
+  cache: ImageBitmap[] = [];
   cacheSubscription: Subscription;
+
+  frameIndex = 0;
 
   static isCustomElementDefined = false;
 
-  protected constructor(private store: Store) {
+  protected constructor(protected store: Store) {
     super();
+  }
 
+  async ngOnInit() {
+    // Some browsers videos can't have a transparent background
+    const isTransparencySupported =
+      isChrome && // transparency is currently not supported in firefox and safari
+      !PlayableVideoEncoder.isSupported(); // alpha is not yet supported in chrome VideoEncoder
+    // TODO check if alpha is supported in Video Muxer
+    if (!isTransparencySupported) {
+      // Make the video background the same as the parent element's background
+      const el = document.querySelector('app-signed-language-output');
+      if (el) {
+        // el does not exist during testing
+        this.background = getComputedStyle(el).backgroundColor;
+      }
+    }
+
+    await this.definePoseViewerElement();
+  }
+
+  async definePoseViewerElement() {
     // Load the `pose-viewer` custom element
     if (!BasePoseViewerComponent.isCustomElementDefined) {
-      defineCustomElementsPoseViewer().then().catch();
       BasePoseViewerComponent.isCustomElementDefined = true;
+
+      const {defineCustomElements} = await import(/* webpackChunkName: "pose-viewer" */ 'pose-viewer/loader');
+      defineCustomElements();
     }
   }
 
   override ngOnDestroy(): void {
     super.ngOnDestroy();
 
-    if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
-      this.mediaRecorder.stop();
-    }
+    this.reset();
   }
 
   setVideo(url: string): void {
@@ -60,13 +79,26 @@ export abstract class BasePoseViewerComponent extends BaseComponent implements O
     return pose.body.fps;
   }
 
+  async initVideoEncoder(image: ImageBitmap) {
+    const fps = await this.fps();
+    this.videoEncoder = new PlayableVideoEncoder(image, fps);
+    await this.videoEncoder.init();
+  }
+
+  async createEncodedVideo() {
+    const blob = await this.videoEncoder.finalize();
+    const url = URL.createObjectURL(blob);
+    this.setVideo(url);
+  }
+
   initMediaRecorder(stream: MediaStream) {
     const recordedChunks: Blob[] = [];
 
     let supportedMimeType: string;
     for (const mimeType of this.mimeTypes) {
       if (MediaRecorder.isTypeSupported(mimeType)) {
-        this.mediaRecorder = new MediaRecorder(stream, {mimeType, videoBitsPerSecond: BPS});
+        const videoBitsPerSecond = 1_000_000_000; // 1Gbps to act as infinity
+        this.mediaRecorder = new MediaRecorder(stream, {mimeType, videoBitsPerSecond});
         supportedMimeType = mimeType;
         break;
       } else {
@@ -78,30 +110,32 @@ export abstract class BasePoseViewerComponent extends BaseComponent implements O
       return;
     }
 
-    fromEvent(this.mediaRecorder, 'dataavailable')
-      .pipe(
-        tap((event: BlobEvent) => recordedChunks.push(event.data)),
-        takeUntil(this.ngUnsubscribe)
-      )
-      .subscribe();
+    const dataAvailableEvent = fromEvent(this.mediaRecorder, 'dataavailable').pipe(
+      tap((event: BlobEvent) => recordedChunks.push(event.data)),
+      takeUntil(this.ngUnsubscribe)
+    );
+    this.mediaSubscriptions.push(dataAvailableEvent.subscribe());
 
-    fromEvent(this.mediaRecorder, 'stop')
-      .pipe(
-        tap(() => {
-          stream.getTracks().forEach(track => track.stop());
-          const blob = new Blob(recordedChunks, {type: this.mediaRecorder.mimeType});
-          const url = URL.createObjectURL(blob);
-          this.setVideo(url);
-        }),
-        takeUntil(this.ngUnsubscribe)
-      )
-      .subscribe();
+    const stopEvent = fromEvent(this.mediaRecorder, 'stop').pipe(
+      tap(async () => {
+        stream.getTracks().forEach(track => track.stop());
+        const blob = new Blob(recordedChunks, {type: this.mediaRecorder.mimeType});
+        console.log('blob', blob.size, blob.type);
+        // TODO: this does not work in iOS. The blob above is of size 0, and the video does not play.
+        //       Should open an issue that ios mediarecorder dataavailable blob size is 0
+        //       https://webkit.org/blog/11353/mediarecorder-api/
+        const url = URL.createObjectURL(blob);
+        this.setVideo(url);
+      }),
+      takeUntil(this.ngUnsubscribe)
+    );
+    this.mediaSubscriptions.push(stopEvent.subscribe());
 
     const duration = this.poseEl.nativeElement.duration * 1000;
     this.mediaRecorder.start(duration);
   }
 
-  async startRecording(canvas: CanvasElement): Promise<void> {
+  async startRecording(canvas: HTMLCanvasElement): Promise<void> {
     // Must get canvas context for FireFox
     // https://stackoverflow.com/questions/63140354/firefox-gives-irregular-initialization-error-when-trying-to-use-navigator-mediad
     canvas.getContext('2d');
@@ -112,36 +146,22 @@ export abstract class BasePoseViewerComponent extends BaseComponent implements O
   }
 
   stopRecording(): void {
+    if (this.videoEncoder) {
+      void this.createEncodedVideo();
+      return;
+    }
+
     if (this.mediaRecorder) {
       this.mediaRecorder.stop();
     }
   }
 
-  createMediaGeneratorTrack() {
-    const generator = new MediaStreamTrackGenerator({kind: 'video'});
-    const writer = generator.writable.getWriter();
-    const stream = new MediaStream();
-    stream.addTrack(generator);
-    return {stream, writer};
-  }
-
-  async addCacheFrame(image: ImageData): Promise<void> {
-    if ('MediaStreamTrackGenerator' in window && false) {
-      // Not ready for use: https://stackoverflow.com/questions/72693091/mediarecorder-ignoring-videoframe-timestamp
-      if (!this.mediaRecorder) {
-        const {stream, writer} = this.createMediaGeneratorTrack();
-        this.streamWriter = writer;
-        this.initMediaRecorder(stream);
+  async addCacheFrame(image: ImageBitmap): Promise<void> {
+    if (PlayableVideoEncoder.isSupported()) {
+      if (!this.videoEncoder) {
+        await this.initVideoEncoder(image);
       }
-      const ms = 1_000_000; // 1µs
-      const fps = await this.fps();
-      const frame = new VideoFrame(await createImageBitmap(image), {
-        // TODO timestamp is not actually respected!
-        timestamp: (ms * this.frameIndex) / fps,
-        duration: ms / fps,
-      });
-      await this.streamWriter.write(frame);
-      frame.close();
+      this.videoEncoder.addFrame(this.frameIndex, image);
     } else {
       this.cache.push(image);
     }
@@ -155,17 +175,23 @@ export abstract class BasePoseViewerComponent extends BaseComponent implements O
       this.cacheSubscription.unsubscribe();
     }
     this.cache = [];
-    this.frameIndex = 0;
+
+    for (const subscription of this.mediaSubscriptions) {
+      subscription.unsubscribe();
+    }
+    this.mediaSubscriptions = [];
 
     // Reset media recorder
     if (this.mediaRecorder) {
-      this.mediaRecorder.stop();
+      if (this.mediaRecorder.state !== 'inactive') {
+        this.mediaRecorder.stop();
+      }
       delete this.mediaRecorder;
     }
 
-    // Close stream writer
-    if (this.streamWriter) {
-      this.streamWriter.close().then().catch();
+    // Reset video encoder
+    if (this.videoEncoder) {
+      this.videoEncoder.close();
     }
   }
 }

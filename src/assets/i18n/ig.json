@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Ahụghị ibe",
+    "doesNotExist": "Ndo, ibe ahụ ị na-achọ adịghị.",
+    "errorLogged": "Anyị abanyela mperi ahụ, anyị ga-enyocha ya.",
+    "goHome": "Gaa n'ụlọ"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Chọpụta asụsụ",
-      "more": "Asụsụ ndị ọzọ"
+      "more": "Asụsụ ndị ọzọ",
+      "detected": "{{lang}} - Achọpụtara"
     },
-    "feedback": "Zite nzaghachi",
     "input": {
       "text": "Ederede",
       "webcam": "Igwefoto webụ",
@@ -22,7 +27,6 @@
       "browse": "Lenye anya na kọmputa gị",
       "title": "Họrọ vidiyo"
     },
-    "description": "Ngwa ntụgharị asụsụ ogbi asụsụ ọtụtụ asụsụ abụọ maka desktọpụ na mkpanaka",
     "spoken-to-signed": {
       "text": "Ederede Asụsụ Asụsụ",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Na-ebu ihe ngosi vidiyo mmadụ",
           "generating": "Na-emepụta vidiyo"
         }
+      },
+      "placeholder": "Tinye ederede"
+    },
+    "description": "Ntụgharị asụsụ ogbi na-enweghị mgbakasị ike na ụdị igbu oge. ",
+    "suggestions": {
+      "translate-from": "Tụgharịa asụsụ site na",
+      "did-you-mean": "Ị na-eche"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Detuo ntụgharị asụsụ"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Nyere aka"
-    },
-    "tools": {
-      "title": "Ngwaọrụ"
     },
     "nav": {
       "pages": "Gaa na ibe ndị ọzọ",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Ngwanrọ na Ikikere"
-    }
+    },
+    "title": "Iwu"
   },
   "playground": {
     "title": "Ebe egwuregwu na-ahazi asụsụ ogbi"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Ọkpụkpụ",
       "avatar": "Avatar",
-      "human": "Mmadụ"
+      "person": "Mmadụ"
     },
     "title": "Ntọala",
     "close": "Mechie ntọala",
     "support": {
       "title": "Nkwado",
       "feedback": {
-        "title": "Nzaghachi"
+        "title": "Nzaghachi",
+        "send": "Zipu nzaghachi"
       },
       "about": {
         "title": "Ihe gbasara"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Mba ụwa",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Ha niile",
+  "countries.signed": "Ha niile"
 }

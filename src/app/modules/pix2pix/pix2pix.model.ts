@@ -1,7 +1,6 @@
-import {Tensor, Tensor3D} from '@tensorflow/tfjs';
-import {LayersModel} from '@tensorflow/tfjs-layers';
-import {loadTFDS} from '../../core/services/tfjs/tfjs.loader';
-import {Dropout} from '@tensorflow/tfjs-layers/dist/layers/core';
+import type {Tensor, Tensor3D} from '@tensorflow/tfjs';
+import type {LayersModel} from '@tensorflow/tfjs-layers';
+import {loadTFJS} from '../../core/services/tfjs/tfjs.loader';
 
 class ModelNotLoadedError extends Error {
   constructor() {
@@ -9,18 +8,25 @@ class ModelNotLoadedError extends Error {
   }
 }
 
-const tfPromise = loadTFDS();
+const tfPromise = loadTFJS();
 let model: LayersModel;
 let upscaler: LayersModel;
 
 function resetDropout(layers: any[]) {
   for (const layer of layers) {
+    // For Sequential models, the layers are in the layers property
     if (layer.layers) {
       resetDropout(layer.layers);
     }
 
-    if (layer instanceof Dropout) {
-      (layer as any).rate = 0;
+    // For TimeDistributed models, the layer is in the layer property
+    if (layer.layer) {
+      resetDropout([layer.layer]);
+    }
+
+    // If the layer is a dropout layer, reset the rate
+    if (layer.rate) {
+      layer.rate = 0;
     }
   }
 }
@@ -115,8 +121,13 @@ export async function translateQueue(queueId: number, image: ImageBitmap | Image
   });
 
   const imageBuffer = await queuePromise;
-  let outputImage = await tf.browser.toPixels(imageBuffer.toTensor()); // ~1-3ms
+  const imageTensor = imageBuffer.toTensor();
+  let outputImage = await tf.browser.toPixels(imageTensor); // ~1-3ms
   outputImage = removeGreenScreen(outputImage); // ~0.1-0.2ms
+
+  // Manually cleanup memory
+  tensor.dispose();
+  imageTensor.dispose();
 
   return outputImage;
 }

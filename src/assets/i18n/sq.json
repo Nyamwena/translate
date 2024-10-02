@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Faqja nuk u gjet",
+    "doesNotExist": "Na vjen keq, faqja që po kërkoni nuk ekziston.",
+    "errorLogged": "Ne e kemi regjistruar gabimin dhe do ta shqyrtojmë.",
+    "goHome": "Shkoni në Shtëpi"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Përkthe me Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Zbulo gjuhën",
-      "more": "Më shumë gjuhë"
+      "more": "Më shumë gjuhë",
+      "detected": "{{lang}} - U zbulua"
     },
-    "feedback": "Dërgo reagimet",
     "input": {
       "text": "Teksti",
       "webcam": "Webkamera",
@@ -22,7 +27,6 @@
       "browse": "Shfleto kompjuterin tënd",
       "title": "Zgjidhni një video"
     },
-    "description": "Një aplikacion përkthimi shumëgjuhësh i gjuhës së shenjave në dy drejtime për desktop dhe celular",
     "spoken-to-signed": {
       "text": "Teksti i gjuhës së folur",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "Po ngarkohet modeli i videos njerëzore",
           "generating": "Gjenerimi i videos"
         }
+      },
+      "placeholder": "Futni Tekstin"
+    },
+    "description": "Përkthim i lehtë i gjuhës së shenjave me modele të avancuara në kohë reale. ",
+    "suggestions": {
+      "translate-from": "Përkthe nga",
+      "did-you-mean": "A do të thuash"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kopjo Përkthim"
       }
     }
   },
   "landing": {
-    "try": "PROVO APL. &#34;PËRKTHE&#34;",
+    "try": "PROVO APL. \"PËRKTHE\"",
     "about": {
       "title": "Rreth apl.",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Kontribuo"
-    },
-    "tools": {
-      "title": "Veglat"
     },
     "nav": {
       "pages": "Navigoni në faqet e tjera",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Softueri dhe Licencat"
-    }
+    },
+    "title": "Ligjore"
   },
   "playground": {
     "title": "Shesh lojërash për përpunimin e gjuhës së shenjave"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skeleti",
       "avatar": "Avatari",
-      "human": "Njerëzore"
+      "person": "Njerëzore"
     },
     "title": "Cilësimet",
     "close": "Mbyll cilësimet",
     "support": {
       "title": "Mbështetje",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Dërgo komente"
       },
       "about": {
         "title": "Rreth"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Ndërkombëtare",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Të gjitha",
+  "countries.signed": "Të gjitha"
 }

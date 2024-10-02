@@ -6,9 +6,9 @@ import {execSync} from 'child_process';
 import {aboutScreenshotsWebp, frameScreenshots, screenshotFrameLocales} from './framefile';
 import {googlePlayLocales} from './locales.android';
 import {iOSLocales} from './locales.ios';
-import {iosDevices, androidDevices} from './devices';
+import {androidDevices, iosDevices} from './devices';
 
-const assetsDir = `src/assets/promotional/about/`;
+const assetsDir = `src/assets/promotional/about`;
 mkdir(`${assetsDir}/iphone`);
 mkdir(`${assetsDir}/android`);
 
@@ -21,9 +21,19 @@ async function asyncPoolAll(...args) {
 }
 
 async function screenshot(page: Page, viewport, path: string, background = 'white') {
+  // Apply safe area insets
+  let styles = '';
+  for (const [key, value] of Object.entries(viewport.safeAreaInsets)) {
+    styles += `--ion-safe-area-${key}: ${value}px;`;
+  }
+  const htmlEl = await page.$('html');
+  await htmlEl.evaluate((el, styles) => el.setAttribute('style', styles), styles);
+
   await page.screenshot({path, fullPage: false});
+
+  // Resize screenshot to required size (including zoom)
   const res = `${viewport.width}x${viewport.height}`;
-  const cmd = `convert ${path} -resize ${res} -background ${background} -gravity center -extent ${res} ${path}`;
+  const cmd = `magick ${path} -resize ${res} -background ${background} -gravity center -extent ${res} ${path}`;
   console.log(execSync(cmd, {encoding: 'utf8'}).toString());
 }
 
@@ -49,6 +59,7 @@ async function makeAndroid(
   const cViewport = {
     height: Math.floor(screen.height * deviceScaleFactor),
     width: Math.floor(screen.width * deviceScaleFactor),
+    safeAreaInsets: {},
   };
   await screenshot(page, cViewport, imgPath(locale, cViewport, 'main'));
 
@@ -57,8 +68,12 @@ async function makeAndroid(
     fs.copyFileSync(imgPath(locale, cViewport, 'main'), `${assetsDir}/android/${pageLang}.png`);
   }
 
+  mkdir(filePath(locale, 'changelogs'));
+  const defaultChangelog = 'New release!';
+
   await Promise.all([
     screenshotFrameLocales(f => filePath(locale, f)),
+    promisify(fs.writeFile)(filePath(locale, 'changelogs/default.txt'), defaultChangelog),
     promisify(fs.writeFile)(filePath(locale, 'title.txt'), title),
     promisify(fs.writeFile)(filePath(locale, 'short_description.txt'), description),
     promisify(fs.writeFile)(filePath(locale, 'full_description.txt'), description),
@@ -81,10 +96,19 @@ async function makeIOS(
   const filePath = (locale, file, base = 'metadata') => `ios/App/fastlane/${base}/${locale}/${file}`;
   const imgPath = (locale, {width, height}, name) => filePath(locale, `${name}_${width}x${height}.png`, 'screenshots');
 
-  const {deviceScaleFactor, screen} = devices[device] as any;
+  const {deviceScaleFactor, screen, safeAreaInsets} = devices[device] as any;
+  const ionSafeAreaInsets = !safeAreaInsets
+    ? {}
+    : {
+        top: safeAreaInsets.top,
+        bottom: safeAreaInsets.bottom,
+        left: safeAreaInsets.trailing,
+        right: safeAreaInsets.leading,
+      };
   const cViewport = {
     height: Math.floor(screen.height * deviceScaleFactor),
     width: Math.floor(screen.width * deviceScaleFactor),
+    safeAreaInsets: ionSafeAreaInsets,
   };
   await screenshot(page, cViewport, imgPath(locale, cViewport, 'main'));
   // Copy main page for the about page
@@ -124,7 +148,12 @@ async function main() {
   const chromiumBrowser = await chromium.launch({headless: false});
 
   for (const device of androidDevices.concat(iosDevices)) {
+    if (!(device in devices)) {
+      console.log(devices);
+      throw new Error(`Device ${device} is unknown`);
+    }
     if (!('screen' in devices[device])) {
+      console.log(devices[device]);
       throw new Error(`Device ${device} is missing screen values`);
     }
   }
@@ -143,6 +172,7 @@ async function main() {
       locale,
       ...devices[device],
     };
+    options.viewport = (options as any).screen; // Now that we support safeAreaInsets, we can use the screen size
     const browser = options.defaultBrowserType === 'webkit' ? webkitBrowser : chromiumBrowser;
     const context = await browser.newContext(options);
     const page = await context.newPage();
@@ -150,7 +180,7 @@ async function main() {
     await Promise.all([
       page.goto('http://localhost:4200/', {waitUntil: 'networkidle'}),
       page.waitForSelector('mat-tab-group', {state: 'attached'}), // Wait until language file is loaded
-    ]);
+    ] as Promise<any>[]);
 
     const title = await page.title();
     const description = await (await page.$('meta[name="description"]')).getAttribute('content');
@@ -162,7 +192,7 @@ async function main() {
   };
 
   const concurrency = 20;
-  const allContexts = androidContexts.concat(iosContexts).sort((a, b) => (Math.random() > 0.5 ? 1 : -1));
+  const allContexts = androidContexts.concat(iosContexts).sort(() => (Math.random() > 0.5 ? 1 : -1));
   await asyncPoolAll(concurrency, allContexts, screenCapture);
   await webkitBrowser.close();
   await chromiumBrowser.close();

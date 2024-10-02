@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Ukurasa haujapatikana",
+    "doesNotExist": "Samahani, ukurasa uliokuwa ukitafuta haupo.",
+    "errorLogged": "Tumeweka hitilafu na tutaichunguza.",
+    "goHome": "Nenda nyumbani"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Tafsiri",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Tambua lugha",
-      "more": "Lugha Zaidi"
+      "more": "Lugha Zaidi",
+      "detected": "{{lang}} - Imegunduliwa"
     },
-    "feedback": "Tuma maoni",
     "input": {
       "text": "Matini",
       "webcam": "Kamera ya wavuti",
@@ -22,7 +27,6 @@
       "browse": "Vinjari kompyuta yako",
       "title": "Chagua video"
     },
-    "description": "Programu ya tafsiri ya lugha ya ishara yenye mwelekeo mbili ya lugha ya ishara ya kompyuta ya mezani na simu ya mkononi",
     "spoken-to-signed": {
       "text": "Maandishi ya Lugha Iliyotamkwa",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Inapakia muundo wa video wa binadamu",
           "generating": "Inazalisha video"
         }
+      },
+      "placeholder": "Ingiza Maandishi"
+    },
+    "description": "Tafsiri ya Lugha ya Alama isiyo na Jitihada yenye Miundo ya Muda Halisi. ",
+    "suggestions": {
+      "translate-from": "Tafsiri kutoka",
+      "did-you-mean": "Ulimaanisha"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Nakili Tafsiri"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Changia"
-    },
-    "tools": {
-      "title": "Zana"
     },
     "nav": {
       "pages": "Nenda kwenye kurasa zingine",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Programu na Leseni"
-    }
+    },
+    "title": "Kisheria"
   },
   "playground": {
     "title": "Uwanja wa Kuchakata Lugha ya Ishara"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Mifupa",
       "avatar": "Avatar",
-      "human": "Binadamu"
+      "person": "Binadamu"
     },
     "title": "Mipangilio",
     "close": "Funga mipangilio",
     "support": {
       "title": "Msaada",
       "feedback": {
-        "title": "Maoni"
+        "title": "Maoni",
+        "send": "Tuma maoni"
       },
       "about": {
         "title": "Kuhusu"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Kimataifa",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Wote",
+  "countries.signed": "Wote"
 }

@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Ba a samo shafi ba",
+    "doesNotExist": "Yi haƙuri, shafin da kuke nema babu shi.",
+    "errorLogged": "Mun shiga cikin kuskure kuma za mu bincika.",
+    "goHome": "Jeka Gida"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Translate",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Tsinkayo harshe",
-      "more": "Ƙarin Harsuna"
+      "more": "Ƙarin Harsuna",
+      "detected": "{{lang}} - An gano"
     },
-    "feedback": "Aika ta&#39;aliƙi",
     "input": {
       "text": "Rubutu",
       "webcam": "Kamara ta yanar gizo",
@@ -22,7 +27,6 @@
       "browse": "Binciki kwamfutarka",
       "title": "Zaɓi bidiyo"
     },
-    "description": "Ƙa'idar fassarar harshe na alamar harshe guda biyu don tebur da wayar hannu",
     "spoken-to-signed": {
       "text": "Rubutun Harshen Magana",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Ana loda samfurin bidiyo na ɗan adam",
           "generating": "Samar da bidiyo"
         }
+      },
+      "placeholder": "Shigar da Rubutu"
+    },
+    "description": "Fassarar Harshen Alamu mara Ƙoƙari tare da Samfuran Yanke-Edge na Gaskiya. ",
+    "suggestions": {
+      "translate-from": "Fassara daga",
+      "did-you-mean": "Kana ma'anan"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Kwafi Fassara"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Ba da gudummuwa"
-    },
-    "tools": {
-      "title": "Kayan Aiki"
     },
     "nav": {
       "pages": "Kewaya zuwa wasu shafuka",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software da kuma Zanen Shafin"
-    }
+    },
+    "title": "Shari'a"
   },
   "playground": {
     "title": "Filin Wasan sarrafa Harshen Alama"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "kwarangwal",
       "avatar": "Avatar",
-      "human": "Mutum"
+      "person": "Mutum"
     },
     "title": "Saituna",
     "close": "Rufe saituna",
     "support": {
       "title": "Taimako",
       "feedback": {
-        "title": "Jawabin"
+        "title": "Jawabin",
+        "send": "Aika ta'aliƙi"
       },
       "about": {
         "title": "Game da"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Ƙasashen Duniya",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Duka",
+  "countries.signed": "Duka"
 }

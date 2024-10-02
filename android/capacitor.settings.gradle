@@ -8,11 +8,20 @@ project(':capacitor-firebase-analytics').projectDir = new File('../node_modules/
 include ':capacitor-firebase-app'
 project(':capacitor-firebase-app').projectDir = new File('../node_modules/@capacitor-firebase/app/android')
 
+include ':capacitor-firebase-app-check'
+project(':capacitor-firebase-app-check').projectDir = new File('../node_modules/@capacitor-firebase/app-check/android')
+
 include ':capacitor-firebase-crashlytics'
 project(':capacitor-firebase-crashlytics').projectDir = new File('../node_modules/@capacitor-firebase/crashlytics/android')
 
 include ':capacitor-firebase-performance'
 project(':capacitor-firebase-performance').projectDir = new File('../node_modules/@capacitor-firebase/performance/android')
+
+include ':capacitor-firebase-storage'
+project(':capacitor-firebase-storage').projectDir = new File('../node_modules/@capacitor-firebase/storage/android')
+
+include ':capacitor-clipboard'
+project(':capacitor-clipboard').projectDir = new File('../node_modules/@capacitor/clipboard/android')
 
 include ':capacitor-filesystem'
 project(':capacitor-filesystem').projectDir = new File('../node_modules/@capacitor/filesystem/android')

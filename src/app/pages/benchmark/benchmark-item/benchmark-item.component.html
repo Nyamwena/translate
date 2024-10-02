@@ -1,7 +1,12 @@
-<mat-card>
-  <mat-card-title>{{ title }}</mat-card-title>
-  <mat-card-content>
-    <span *ngIf="timings.length === 1">{{ timings[0].toFixed(1) }}ms</span>
-    <span *ngIf="timings.length > 1">~{{ fps() }}fps</span>
-  </mat-card-content>
-</mat-card>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    @if (timings.length === 1) {
+    <span>{{ timings[0].toFixed(1) }}ms</span>
+    } @else if (timings.length > 1) {
+    <span>~{{ fps() }}fps</span>
+    }
+  </ion-card-content>
+</ion-card>

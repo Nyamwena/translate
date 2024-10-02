@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "ገጹ አልተገኘም",
+    "doesNotExist": "ይቅርታ፣ ስትፈልጉት የነበረው ገጽ የለም።",
+    "errorLogged": "ስህተቱን አስገብተናል እና እንመለከታለን።",
+    "goHome": "ወደ ቤት ሂድ"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "የSign ተርጓሚ",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "ቋንቋ  አግኝ",
-      "more": "ተጨማሪ ቋንቋዎች"
+      "more": "ተጨማሪ ቋንቋዎች",
+      "detected": "{{lang}} - ተገኝቷል"
     },
-    "feedback": "ግብረ-መልስ ላክ",
     "input": {
       "text": "ጽሑፍ",
       "webcam": "የድረገፅ ካሜራ",
@@ -22,7 +27,6 @@
       "browse": "ኮምፒውተርዎን ያስሱ",
       "title": "ቪዲዮ ይምረጡ"
     },
-    "description": "ለዴስክቶፕ እና ሞባይል ባለሁለት አቅጣጫ ባለ ብዙ ቋንቋ የምልክት ቋንቋ ትርጉም መተግበሪያ",
     "spoken-to-signed": {
       "text": "የንግግር ቋንቋ ጽሑፍ",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "የሰው ቪዲዮ ሞዴል በመጫን ላይ",
           "generating": "ቪዲዮ በማመንጨት ላይ"
         }
+      },
+      "placeholder": "ጽሑፍ ያስገቡ"
+    },
+    "description": "ልፋት የሌለበት የምልክት ቋንቋ ትርጉም በእውነተኛ ጊዜ ሞዴሎች። ",
+    "suggestions": {
+      "translate-from": "ከ ተርጉም።",
+      "did-you-mean": "ማለትሽ ነው"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "ትርጉም ቅዳ"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "ያበርክቱ"
-    },
-    "tools": {
-      "title": "መሳሪያዎች"
     },
     "nav": {
       "pages": "ወደ ሌሎች ገጾች ይሂዱ",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "ሶፍትዌር እና ፈቃዶች"
-    }
+    },
+    "title": "ህጋዊ"
   },
   "playground": {
     "title": "የምልክት ቋንቋ ሂደት የመጫወቻ ሜዳ"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "አጽም",
       "avatar": "አምሳያ",
-      "human": "ሰው"
+      "person": "ሰው"
     },
     "title": "ቅንብሮች",
     "close": "ቅንብሮችን ዝጋ",
     "support": {
       "title": "ድጋፍ",
       "feedback": {
-        "title": "ግብረ መልስ"
+        "title": "ግብረ መልስ",
+        "send": "ግብረ - መልስ ላክ"
       },
       "about": {
         "title": "ስለ"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "ዓለም አቀፍ",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "ሁሉም",
+  "countries.signed": "ሁሉም"
 }

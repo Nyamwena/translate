@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Seite nicht gefunden",
+    "doesNotExist": "Entschuldigung, die von Ihnen gesuchte Seite existiert nicht.",
+    "errorLogged": "Wir haben den Fehler protokolliert und werden ihn untersuchen.",
+    "goHome": "Zur Startseite"
+  },
   "keyboard": {
     "ctrl": "Strg",
     "shift": "Umschalttaste"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Übersetzer",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Sprache erkennen",
-      "more": "Mehr Sprachen"
+      "more": "Mehr Sprachen",
+      "detected": "{{lang}} – Erkannt"
     },
-    "feedback": "Feedback geben",
     "input": {
       "text": "Text",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Computer durchsuchen",
       "title": "Wählen Sie ein Video aus"
     },
-    "description": "Eine bidirektionale mehrsprachige Gebärdensprachübersetzungs-App für Desktop und Handy",
     "spoken-to-signed": {
       "text": "Text in gesprochener Sprache",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Menschliches Videomodell wird geladen",
           "generating": "Video generieren"
         }
+      },
+      "placeholder": "Text eingeben"
+    },
+    "description": "Mühelose Übersetzung in Gebärdensprache mit modernsten Echtzeitmodellen. ",
+    "suggestions": {
+      "translate-from": "Übersetzen von",
+      "did-you-mean": "Meinten Sie"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Übersetzung kopieren"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Etwas beitragen"
-    },
-    "tools": {
-      "title": "Tools"
     },
     "nav": {
       "pages": "Navigieren Sie zu anderen Seiten",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Software und Lizenzen"
-    }
+    },
+    "title": "Legal"
   },
   "playground": {
     "title": "Spielplatz für Gebärdensprachverarbeitung"
@@ -146,17 +159,18 @@
     "poseViewer": {
       "pose": "Skelett",
       "avatar": "Benutzerbild",
-      "human": "Menschlich"
+      "person": "Menschlich"
     },
     "title": "Einstellungen",
     "close": "Einstellungen schließen",
     "support": {
       "title": "Die Unterstützung",
       "feedback": {
-        "title": "Feedback"
+        "title": "Feedback",
+        "send": "Feedback abschicken"
       },
       "about": {
-        "title": "Um"
+        "title": "Über"
       }
     },
     "voice": {
@@ -182,7 +196,7 @@
           "translation.signedToSpoken": "Signed-to-Spoken"
         },
         "actions": {
-          "toggle": "{{Label}} umschalten",
+          "toggle": "{{label}} umschalten",
           "download": "Laden Sie das Offline-Modell herunter",
           "delete": "Leeren Sie den Offline-Modell-Cache",
           "reDownload": "Laden Sie das Offline-Modell erneut herunter"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "International",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Alle",
+  "countries.signed": "Alle"
 }

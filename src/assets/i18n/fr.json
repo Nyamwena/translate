@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Page non trouvée",
+    "doesNotExist": "Désolé, la page que vous recherchez n'existe pas.",
+    "errorLogged": "Nous avons consigné l'erreur et nous l'examinerons.",
+    "goHome": "Aller à la maison"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Maj"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Traduction",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Détecter la langue",
-      "more": "Plus de langues"
+      "more": "Plus de langues",
+      "detected": "{{lang}} - Détecté"
     },
-    "feedback": "Envoyer des commentaires",
     "input": {
       "text": "Texte",
       "webcam": "Webcam",
@@ -22,7 +27,6 @@
       "browse": "Parcourir les fichiers sur votre ordinateur",
       "title": "Choisissez une vidéo"
     },
-    "description": "Une application de traduction en langue des signes multilingue bidirectionnelle pour ordinateur et mobile",
     "spoken-to-signed": {
       "text": "Texte en langue parlée",
       "actions": {
@@ -35,11 +39,22 @@
           "loading": "Chargement du modèle vidéo humain",
           "generating": "Génération de vidéo"
         }
+      },
+      "placeholder": "Entrez du texte"
+    },
+    "description": "Traduction en langue des signes sans effort avec des modèles en temps réel de pointe. ",
+    "suggestions": {
+      "translate-from": "Traduit depuis",
+      "did-you-mean": "Vouliez-vous dire"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Copier la traduction"
       }
     }
   },
   "landing": {
-    "try": "ESSAYER GOOGLE TRADUCTION",
+    "try": "Essayer Sign Traduction",
     "about": {
       "title": "À propos",
       "hero": {
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Contribuer"
-    },
-    "tools": {
-      "title": "Outils"
     },
     "nav": {
       "pages": "Naviguer vers d'autres pages",
@@ -80,14 +92,15 @@
   },
   "legal": {
     "terms": {
-      "title": "Conditions d&#39;utilisation"
+      "title": "Conditions d'utilisation"
     },
     "privacy": {
       "title": "Confidentialité"
     },
     "licenses": {
       "title": "Logiciels et licences"
-    }
+    },
+    "title": "Légal"
   },
   "playground": {
     "title": "Terrain de jeu pour le traitement de la langue des signes"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Squelette",
       "avatar": "Avatar",
-      "human": "Humain"
+      "person": "Humain"
     },
     "title": "Réglages",
     "close": "Fermer les paramètres",
     "support": {
       "title": "Soutien",
       "feedback": {
-        "title": "Retour d'information"
+        "title": "Retour d'information",
+        "send": "Envoyer des commentaires"
       },
       "about": {
         "title": "À propos de"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "International",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Tous",
+  "countries.signed": "Tous"
 }

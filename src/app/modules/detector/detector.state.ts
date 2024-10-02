@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Action, NgxsOnInit, Select, State, StateContext} from '@ngxs/store';
+import {Action, NgxsOnInit, State, StateContext, Store} from '@ngxs/store';
 import {DetectorService} from './detector.service';
 import {DetectSigning} from './detector.actions';
 import {filter, first, tap} from 'rxjs/operators';
-import {Pose} from '../pose/pose.state';
+import {EstimatedPose} from '../pose/pose.state';
 import {Observable} from 'rxjs';
 
 export interface DetectorStateModel {
@@ -23,12 +23,15 @@ const initialState: DetectorStateModel = {
 })
 export class DetectorState implements NgxsOnInit {
   detectSign = false;
-  @Select(state => state.pose.pose) pose$: Observable<Pose>;
-  @Select(state => state.settings.detectSign) detectSign$: Observable<boolean>;
+  pose$: Observable<EstimatedPose>;
+  detectSign$: Observable<boolean>;
 
-  constructor(private detector: DetectorService) {}
+  constructor(private store: Store, private detector: DetectorService) {
+    this.pose$ = this.store.select<EstimatedPose>(state => state.pose.pose);
+    this.detectSign$ = this.store.select<boolean>(state => state.settings.detectSign);
+  }
 
-  ngxsOnInit({patchState, dispatch}: StateContext<any>): void {
+  ngxsOnInit({dispatch}: StateContext<any>): void {
     // Load model once setting turns on
     this.detectSign$
       .pipe(
@@ -43,14 +46,14 @@ export class DetectorState implements NgxsOnInit {
       .pipe(
         filter(Boolean),
         filter(() => this.detectSign), // Only run if needed
-        tap((pose: Pose) => dispatch(new DetectSigning(pose)))
+        tap((pose: EstimatedPose) => dispatch(new DetectSigning(pose)))
       )
       .subscribe();
   }
 
   @Action(DetectSigning)
-  async detectSigning({getState, patchState}: StateContext<DetectorStateModel>, {pose}: DetectSigning): Promise<void> {
-    const signingProbability = await this.detector.detect(pose);
+  detectSigning({getState, patchState}: StateContext<DetectorStateModel>, {pose}: DetectSigning): void {
+    const signingProbability = this.detector.detect(pose);
     patchState({
       signingProbability,
       isSigning: signingProbability > 0.5,

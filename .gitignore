@@ -58,9 +58,14 @@ functions/lib
 functions/src/playground.ts
 .firebase
 firebase-debug.log
+firestore-debug.log
+database-debug.log
 
 .env
 
 
 src/assets/promotional/about/iphone/*.png
 src/assets/promotional/about/android/*.png
+
+package-lock.json
+bun.lockb

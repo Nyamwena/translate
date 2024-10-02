@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "səhifə tapılmadı",
+    "doesNotExist": "Üzr istəyirik, axtardığınız səhifə mövcud deyil.",
+    "errorLogged": "Biz xətanı qeyd etdik və onu araşdıracağıq.",
+    "goHome": "Evə getmək"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Sign Tərcümə",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "Dili seç",
-      "more": "Daha çox dil"
+      "more": "Daha çox dil",
+      "detected": "{{lang}} - Aşkarlandı"
     },
-    "feedback": "Rəy göndər",
     "input": {
       "text": "Mətn",
       "webcam": "Vebkamera",
@@ -22,7 +27,6 @@
       "browse": "Kompüterinizə nəzər salın",
       "title": "Video seçin"
     },
-    "description": "Masaüstü və mobil cihazlar üçün iki istiqamətli çoxdilli işarə dili tərcümə proqramı",
     "spoken-to-signed": {
       "text": "Danışıq Dili Mətni",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "İnsan video modeli yüklənir",
           "generating": "Videonun yaradılması"
         }
+      },
+      "placeholder": "Mətni daxil edin"
+    },
+    "description": "Ən müasir real vaxt modelləri ilə zəhmətsiz işarə dili tərcüməsi. ",
+    "suggestions": {
+      "translate-from": "Tərcümə et",
+      "did-you-mean": "nəzərdə tutdun"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Tərcüməni Kopyalayın"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Töhfə verin"
-    },
-    "tools": {
-      "title": "Alətlər"
     },
     "nav": {
       "pages": "Digər səhifələrə keçin",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Proqram və Lisenziya"
-    }
+    },
+    "title": "Hüquqi"
   },
   "playground": {
     "title": "İşarə Dili Emalı Oyun Meydançası"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Skelet",
       "avatar": "Avatar",
-      "human": "İnsan"
+      "person": "İnsan"
     },
     "title": "Parametrlər",
     "close": "Parametrləri bağlayın",
     "support": {
       "title": "Dəstək",
       "feedback": {
-        "title": "Əlaqə"
+        "title": "Əlaqə",
+        "send": "Rəy göndərin"
       },
       "about": {
         "title": "Haqqında"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Beynəlxalq",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Hamısı",
+  "countries.signed": "Hamısı"
 }

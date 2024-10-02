@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Kaore i kitea te whaarangi",
+    "doesNotExist": "Aroha mai, karekau te wharangi i rapua e koe.",
+    "errorLogged": "Kua takiuru matou i te hapa ka tirohia e matou.",
+    "goHome": "Haere ki te Kainga"
+  },
   "keyboard": {
     "ctrl": "Ctrl",
     "shift": "Shift"
@@ -6,11 +12,10 @@
   "translate": {
     "title": "Whakamāori Sign",
     "language-selector": {
-      "detected": "{{lang}}",
       "detect": "tautuhi reo",
-      "more": "Ētahi atu Reo"
+      "more": "Ētahi atu Reo",
+      "detected": "{{lang}} - Kua kitea"
     },
-    "feedback": "Tuku urupare",
     "input": {
       "text": "Kuputuhi",
       "webcam": "Tukutuku",
@@ -22,7 +27,6 @@
       "browse": "Pūtirotirotia tō rorohiko",
       "title": "Kōwhiria he ataata"
     },
-    "description": "He taupānga whakamaori reo tohu reo-a-rua mo te papamahi me te pūkoro",
     "spoken-to-signed": {
       "text": "Kuputuhi Reo Korero",
       "actions": {
@@ -35,6 +39,17 @@
           "loading": "Uta ana tauira ataata tangata",
           "generating": "Te whakaputa ataata"
         }
+      },
+      "placeholder": "Whakauru Kuputuhi"
+    },
+    "description": "Te Whakamaoritanga Reo Waitohu Maamaa me nga Tauira Waa Tuturu. ",
+    "suggestions": {
+      "translate-from": "Whakamaori mai",
+      "did-you-mean": "Ko koe te tikanga"
+    },
+    "signed-to-spoken": {
+      "actions": {
+        "copy": "Tārua Whakamāoritanga"
       }
     }
   },
@@ -56,9 +71,6 @@
     },
     "contribute": {
       "title": "Whai wāhi ki"
-    },
-    "tools": {
-      "title": "Ngā utauta"
     },
     "nav": {
       "pages": "Whakatere ki etahi atu wharangi",
@@ -87,7 +99,8 @@
     },
     "licenses": {
       "title": "Ngā Pūmanawa me ngā Raihana"
-    }
+    },
+    "title": "Ture"
   },
   "playground": {
     "title": "Papa takaro Tukatuka Reo Waitohu"
@@ -146,14 +159,15 @@
     "poseViewer": {
       "pose": "Koiwi",
       "avatar": "Avatar",
-      "human": "Tangata"
+      "person": "Tangata"
     },
     "title": "Tautuhinga",
     "close": "Katia nga tautuhinga",
     "support": {
       "title": "Tautoko",
       "feedback": {
-        "title": "Urupare"
+        "title": "Urupare",
+        "send": "Tuku urupare"
       },
       "about": {
         "title": "Mō"
@@ -196,6 +210,7 @@
       }
     }
   },
-  "countries.isl": "Ao-ao",
-  "to": "{{a}} → {{b}}"
+  "to": "{{a}} → {{b}}",
+  "languages.spoken": "Katoa",
+  "countries.signed": "Katoa"
 }
